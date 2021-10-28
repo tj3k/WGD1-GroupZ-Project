@@ -1,10 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="uk" dir="ltr" xmlns="http://www.w3.org/1999/html">
+
+<!--Description Metadata for search engines for whenever/if-ever this website gets put up online-->
+<meta name="description" content="Take on Towns in this 2D Wild-West Shooter game, Project Gunning Wild.">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+
+    <title>Home Page</title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <link rel="icon" href="assets/img/favicon.ico">
+
 </head>
+
+<style>
+    ::-webkit-scrollbar {
+        width: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        border-radius: 5px;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+    }
+
+    ::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: #be2502;
+    }
+</style>
+
 <body>
+<header>
+    <a href="#" class="logo">Logo</a>
+    <ul>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="design.html">Design</a></li>
+        <li><a href="game.html">Game</a></li>
+    </ul>
+</header>
+<section>
+    <img src="assets/img/use.jpg" alt="Desert Background" id="scene">
+    <h2 id="text">Game Name</h2>
+    <a href="game.html" id="btn">Play Game</a><br>
+
+    <!--  Find a way to make button lower-->
+    <!--  <a href="#sec" id="btn">Read More...</a>-->
+
+</section>
+
+<div class="sec" id="sec">
+    <div class="container">
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <h2>01</h2>
+                    <h3>Overview</h3>
+                    <p>Project Gunning Wild (working title) is a 2D Shooting-Gallery game with Arcade mechanics. <br>
+                        You play as a cowboy and you shoot down enemies/bosses in the town just to see if you are stronger than them.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <h2>02</h2>
+                    <h3>Story</h3>
+                    <p>Bored by the monotamy of exploring the desert, you decide to challenge entire towns to see if you can best them at shooting.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="box">
+                <div class="content">
+                    <h2>03</h2>
+                    <h3>Concept</h3>
+                    <p>To start the game, you enter a town and then take over it by shooting at the residents building after building.<br>
+                        Once you're done with the small-fry, you have to face the town "boss".<br>
+                        You aim with your mouse and you shoot with the mouse click as you would on a first person game.<br>
+                        You'll be able to rack up a combo if you manage to chain a string of shots on an enemy or between others.<br>
+                        This will increase your total score for the level.<br>
+                        After a while, you will encounter a shop where you can freshen up/upgrade your gear for later in the game.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script>
+    let scene = document.getElementById('scene');
+    let text = document.getElementById('text');
+    let btn = document.getElementById('btn');
+
+    window.addEventListener('scroll',function (){
+        let value = window.scrollY;
+        scene.style.top = value + 'px';
+    })
+</script>
 
 </body>
 </html>
