@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Design</title>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <link rel="stylesheet" href="fontawesome-5.5/css/all.min.css" />
+  <link rel="stylesheet" href="css/bootstrap.css">
+  <link rel="stylesheet" href="css/side.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      // Add smooth scrolling to all links
+      $("a").on('click', function(event) {
+
+        // Make sure this.hash has a value before overriding default behavior
+        if (this.hash !== "") {
+          // Prevent default anchor click behavior
+          event.preventDefault();
+
+          // Store hash
+          var hash = this.hash;
+
+          // Using jQuery's animate() method to add smooth page scroll
+          // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+          $('html, body').animate({
+            scrollTop: $(hash).offset().top
+          }, 800, function(){
+
+            // Add hash (#) to URL when done scrolling (default click behavior)
+            window.location.hash = hash;
+          });
+        } // End if
+      });
+    });
+  </script>
+  <script src="js/main.js"></script>
+</head>
+<body>
+<section id="body">
+<section id="outlaws" class="text-white tm-font-big">
+
+    <div class="text-center tm-hero-text-container">
+      <div class="tm-hero-text-container-inner">
+        <h2 class="tm-hero-title">Game Design</h2>
+        <p class="tm-hero-subtitle">
+          Bloody Outlaws
+        </p>
+      </div>
+    </div>
+
+    <div class="tm-next tm-intro-next">
+      <a href="#gameovr" class="text-center tm-down-arrow-link">
+        <i class="fas fa-2x fa-arrow-down tm-down-arrow"></i>
+      </a>
+    </div>
+
+  </div>
+</section>
+
+  <section id="gameovr" class="tm-section-pad-top">
+    <div class="row tm-content-box">
+      <div class="col-lg-12 col-xl-12">
+        <div class="tm-intro-text-container">
+          <h2 class="text-center tm-text-colour mb-4 tm-section-title">Game Overview</h2>
+          <hr class="navy-line" data-aos="zoom-in" />
+          <p class="text-center tm-intro-text">
+            Project Gunning Wild is a 2D rail shooter set in the Wild West days.<br>
+            Whilst roaming the desert towns, you'll come across a variety of different enemies.<br>
+            The core of this game will be flair and speed, abiding to these core aspects will help you progress through the levels.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="tm-section-pad-top">
+    <div class="row tm-content-box">
+      <div class="col-lg-12 col-xl-12">
+        <div class="tm-intro-text-container">
+          <h2 class="text-center tm-text-colour mb-4 tm-section-title">Influences</h2>
+          <hr class="navy-line" data-aos="zoom-in" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="card" class="dcard">
+    <div class="dcard-content">
+      <h2 class="dcard-title">Operation Wolf</h2>
+      <p class="dcard-body">Operation Wolf is a light gun shooter arcade game which has won Game of the Year back in 1988. This played as an influence in the gameplay</p>
+    </div>
+  </div>
+<br>
+  <div id="card2" class="dcard">
+    <div class="dcard-content">
+      <h2 class="dcard-title">Blood Bros</h2>
+      <p class="dcard-body">Blood bros. is a 90s shooting gallery arcade game, which has an art style that we would like to replicate into our own game </p>
+    </div>
+  </div>
+
+  <section class="tm-section-pad-top">
+    <div class="row tm-content-box">
+      <div class="col-lg-12 col-xl-12">
+        <div class="tm-intro-text-container">
+          <h2 class="text-center tm-text-colour mb-4 tm-section-title">Screen Shots</h2>
+          <hr class="navy-line" data-aos="zoom-in" />
+          <p class="text-center tm-intro-text">
+            These are some screenshots taken from within the game,<br>
+            to show the graphic style as well as the level design<br>
+            (Not actual in game shots yet!)
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- W3schools -->
+  <div class="slideshow-container">
+
+    <div class="mySlides fade">
+      <div class="numbertext">1 / 3</div>
+      <img src="img/slide1.jpg" style="width:100%">
+      <div class="text">Caption Text</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">2 / 3</div>
+      <img src="img/slide2.jpg" style="width:100%">
+      <div class="text">Caption Two</div>
+    </div>
+
+    <div class="mySlides fade">
+      <div class="numbertext">3 / 3</div>
+      <img src="img/slide3.png" style="width:100%">
+      <div class="text">Caption Three</div>
+    </div>
+
+<!--    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>-->
+<!--    <a class="next" onclick="plusSlides(1)">&#10095;</a>-->
+
+  </div>
+  <br>
+
+  <div style="text-align:center">
+    <span class="dot" onclick="currentSlide(1)"></span>
+    <span class="dot" onclick="currentSlide(2)"></span>
+    <span class="dot" onclick="currentSlide(3)"></span>
+  </div>
+
+  <script>
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("dot");
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slideIndex++;
+      if (slideIndex > slides.length) {slideIndex = 1}
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      setTimeout(showSlides, 2000); // Change image every 2 seconds
+    }
+  </script>
+
+
+
+
+  <div class="page">
+  <div class="menu-wrapper">
+    <input type="checkbox" class="toggle"/>
+
+    <div class="burger">
+      <div class="bar"></div>
+    </div>
+
+    <div class="mainMenu">
+      <div class="drop">
+        <br>
+        <br>
+        <br>
+        <br>
+        <a href="index.html">Home</a>
+        <br>
+        <br>
+        <a href="team.html">Team</a>
+        <br>
+        <br>
+        <a href="Design.html" class="active">Design</a>
+        <br>
+        <br>
+        <a href="play.html">Play</a>
+      </div>
+    </div>
+  </div>
+
+
+</div>
+
+  <footer class="footer-area">
+    <div class="footer">
+      <div class="footer-social">
+        <a href="https://en-gb.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://uk.linkedin.com/"><i class="fab fa-linkedin-in"></i></a>
+      </div>
+      <ul class="list">
+        <li>
+          <a href="index.html">Home</a>
+        </li>
+        <li>
+          <a href="team.html">Team</a>
+        </li>
+        <li>
+          <a href="Design.html">Design</a>
+        </li>
+        <li>
+          <a href="play.html">Play</a>
+        </li>
+      </ul>
+      <p class="copyright">
+        BloodyOutlaws @ 2021
+      </p>
+    </div>
+  </footer>
+
+  <a id="top"  onclick="topFunction()" href="#" data-toggle="tooltip" data-placement="right" title="Go to Top">
+    <img src="arrow.svg" />
+  </a>
+
+<script>
+  mybutton = document.getElementById("top");
+
+  window.onscroll = function() {scrollFunction()};
+
+  function scrollFunction() {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      mybutton.style.display = "block";
+    } else {
+      mybutton.style.display = "none";
+    }
+  }
+
+  function topFunction() {
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+</script>
+
+</section>
+</body>
+</html>
