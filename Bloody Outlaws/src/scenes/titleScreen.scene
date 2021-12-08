@@ -1,0 +1,84 @@
+{
+    "id": "01aefa93-6044-4159-8358-7e91310aa05f",
+    "sceneType": "SCENE",
+    "settings": {
+        "snapEnabled": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "type": "TileSprite",
+            "id": "2dbdf38d-b0fd-4ea4-a357-528f828541b3",
+            "label": "background",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "background"
+            },
+            "x": 640,
+            "y": 360,
+            "width": 1280,
+            "height": 720
+        },
+        {
+            "type": "Text",
+            "id": "b2b3dbd5-2106-41fa-8a04-9b511e3401a9",
+            "label": "text_1",
+            "components": [],
+            "x": 640,
+            "y": 512,
+            "text": "Made with\nPhaser 3 + Phaser Editor 2D",
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "paddingBottom": 5,
+            "align": "center",
+            "fontFamily": "Arial",
+            "fontSize": "30px",
+            "stroke": "#eedc8eff",
+            "strokeThickness": 1,
+            "backgroundColor": "",
+            "shadow.offsetY": 5,
+            "shadow.stroke": true,
+            "shadow.fill": true,
+            "shadow.blur": 3
+        },
+        {
+            "type": "Image",
+            "id": "8930b95f-2506-4d79-b06c-ba5a9c174360",
+            "label": "GameLogo",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "GameLogo"
+            },
+            "x": 640,
+            "y": 320,
+            "scaleX": 4,
+            "scaleY": 4
+        },
+        {
+            "type": "Image",
+            "id": "9c41c399-89a2-4a3c-9678-025318b4e025",
+            "label": "cursor",
+            "components": [],
+            "texture": {
+                "key": "Cursor"
+            },
+            "x": -32,
+            "y": -32,
+            "scaleX": 2,
+            "scaleY": 2
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 2
+    }
+}

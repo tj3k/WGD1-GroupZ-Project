@@ -1,0 +1,217 @@
+{
+    "id": "d4a4ee94-7771-481a-b176-986a26ef6c19",
+    "sceneType": "SCENE",
+    "settings": {
+        "snapEnabled": true,
+        "snapWidth": 8,
+        "snapHeight": 8,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level1",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "type": "TileSprite",
+            "id": "e12add91-774d-4233-970c-bd612e5bcdf6",
+            "label": "background",
+            "components": [],
+            "texture": {
+                "key": "background"
+            },
+            "x": 640,
+            "y": 360,
+            "width": 1280,
+            "height": 720
+        },
+        {
+            "type": "Ellipse",
+            "id": "a605cbd2-b13d-4181-a1dd-8209144270ab",
+            "label": "barflyTest",
+            "scope": "CLASS",
+            "components": [],
+            "x": 224,
+            "y": 456,
+            "angle": -90,
+            "isFilled": true,
+            "fillColor": "#3f86bd",
+            "width": 128,
+            "height": 128,
+            "smoothness": 9
+        },
+        {
+            "type": "Ellipse",
+            "id": "2c834d77-1faa-46c2-8a56-78ee4ecb08a8",
+            "label": "bouncerTest",
+            "scope": "CLASS",
+            "components": [],
+            "x": 400,
+            "y": 424,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "angle": -90,
+            "isFilled": true,
+            "fillColor": "#cdd730",
+            "width": 128,
+            "height": 128,
+            "smoothness": 9
+        },
+        {
+            "type": "Ellipse",
+            "id": "98623aca-b54a-4513-845c-737318a5a8f4",
+            "label": "dustTest",
+            "scope": "CLASS",
+            "components": [],
+            "x": 560,
+            "y": 480,
+            "scaleX": 0.6,
+            "scaleY": 0.6,
+            "angle": -90,
+            "isFilled": true,
+            "fillColor": "#6b2f2f",
+            "width": 128,
+            "height": 128,
+            "smoothness": 9
+        },
+        {
+            "type": "Layer",
+            "id": "c8345cc2-b939-4e9a-a081-0685386b2f50",
+            "label": "UI",
+            "components": [],
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "756d9ae7-07b9-4bca-b197-a5d22230c764",
+                    "label": "uI_Border",
+                    "components": [],
+                    "texture": {
+                        "key": "UI_Border"
+                    },
+                    "x": 640,
+                    "y": 360
+                },
+                {
+                    "type": "Image",
+                    "id": "253aa268-23af-4bd9-8583-02cd032d1d4f",
+                    "label": "ui_iconBox_ammo",
+                    "components": [],
+                    "texture": {
+                        "key": "UI_IconBox"
+                    },
+                    "x": 1176,
+                    "y": 648,
+                    "scaleX": 3,
+                    "scaleY": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "02d5a898-9ca2-4e5a-b47e-d367eeab5374",
+                    "label": "ui_iconBox_health",
+                    "components": [],
+                    "texture": {
+                        "key": "UI_IconBox"
+                    },
+                    "x": 104,
+                    "y": 648,
+                    "scaleX": 3,
+                    "scaleY": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "890a0061-165f-4774-8731-ee2723bf0405",
+                    "label": "uI_Ammo",
+                    "components": [],
+                    "texture": {
+                        "key": "UI_Ammo"
+                    },
+                    "x": 1176,
+                    "y": 648,
+                    "scaleX": 3,
+                    "scaleY": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "bdf846b1-66bc-46ae-8f12-b81d951b0a82",
+                    "label": "uI_Health",
+                    "components": [],
+                    "texture": {
+                        "key": "UI_Health"
+                    },
+                    "x": 104,
+                    "y": 648,
+                    "scaleX": 3,
+                    "scaleY": 3
+                }
+            ]
+        },
+        {
+            "type": "Image",
+            "id": "f9446ec8-08c8-4d44-ad8d-403480555eaa",
+            "label": "cursor",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "Cursor"
+            },
+            "x": 1120,
+            "y": 480,
+            "scaleX": 3,
+            "scaleY": 3
+        },
+        {
+            "type": "Text",
+            "id": "5bc52be0-f3ea-4a5e-a102-5c017f558219",
+            "label": "healthText",
+            "components": [],
+            "x": 176,
+            "y": 624,
+            "originX": 0,
+            "originY": 0,
+            "text": "20 / 20",
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "fontFamily": "Arial",
+            "fontSize": "50px",
+            "fontStyle": "bold",
+            "stroke": "#7b1616ff",
+            "shadow.stroke": true,
+            "shadow.fill": true,
+            "shadow.blur": 6
+        },
+        {
+            "type": "Text",
+            "id": "11a07320-3c84-49df-a92d-346950d926e3",
+            "label": "ammoText",
+            "components": [],
+            "x": 992,
+            "y": 624,
+            "originX": 0,
+            "originY": 0,
+            "text": "6 / 6",
+            "paddingLeft": 5,
+            "paddingRight": 5,
+            "align": "right",
+            "fontFamily": "Arial",
+            "fontSize": "50px",
+            "fontStyle": "bold",
+            "stroke": "#7b1616ff",
+            "shadow.stroke": true,
+            "shadow.fill": true,
+            "shadow.blur": 6
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 2
+    },
+    "lists": [
+        {
+            "id": "a18b545f-ac1e-4e5f-ad89-32d0004f36ed",
+            "label": "enemies"
+        }
+    ]
+}

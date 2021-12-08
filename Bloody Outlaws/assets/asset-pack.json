@@ -1,0 +1,59 @@
+{
+    "section1": {
+        "files": [
+            {
+                "url": "assets/images/backgrounds/background.png",
+                "type": "image",
+                "key": "background"
+            },
+            {
+                "url": "assets/images/UI/Cursor.png",
+                "type": "image",
+                "key": "Cursor"
+            },
+            {
+                "url": "assets/images/UI/GameLogo.png",
+                "type": "image",
+                "key": "GameLogo"
+            },
+            {
+                "textureURL": "assets/fonts/smallPixel.png",
+                "fontDataURL": "assets/fonts/smallPixel.json",
+                "type": "bitmapFont",
+                "key": "smallPixel"
+            },
+            {
+                "url": "assets/images/UI/UI_Ammo_V2.png",
+                "type": "image",
+                "key": "UI_Ammo"
+            },
+            {
+                "url": "assets/images/UI/UI_Border.png",
+                "type": "image",
+                "key": "UI_Border"
+            },
+            {
+                "url": "assets/images/UI/UI_Chamber.png",
+                "type": "image",
+                "key": "UI_Chamber"
+            },
+            {
+                "url": "assets/images/UI/UI_Health.png",
+                "type": "image",
+                "key": "UI_Health"
+            },
+            {
+                "url": "assets/images/UI/UI_IconBox.png",
+                "type": "image",
+                "key": "UI_IconBox"
+            }
+        ]
+    },
+    "meta": {
+        "app": "Phaser Editor 2D - Asset Pack Editor",
+        "contentType": "phasereditor2d.pack.core.AssetContentType",
+        "url": "https://phasereditor2d.com",
+        "version": 2,
+        "showAllFilesInBlocks": false
+    }
+}
