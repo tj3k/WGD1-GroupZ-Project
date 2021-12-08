@@ -5,7 +5,7 @@
         "snapEnabled": true,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
-        "sceneKey": "Level",
+        "sceneKey": "titleScreen",
         "borderWidth": 1280,
         "borderHeight": 720
     },
