@@ -16,6 +16,7 @@
             "type": "TileSprite",
             "id": "e12add91-774d-4233-970c-bd612e5bcdf6",
             "label": "background",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "background"
