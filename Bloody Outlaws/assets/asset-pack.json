@@ -17,8 +17,8 @@
                 "key": "GameLogo"
             },
             {
-                "textureURL": "assets/fonts/smallPixel.png",
-                "fontDataURL": "assets/fonts/smallPixel.json",
+                "textureURL": "assets/fonts/smallPixel7_0.png",
+                "fontDataURL": "assets/fonts/smallPixel7.json",
                 "type": "bitmapFont",
                 "key": "smallPixel"
             },
