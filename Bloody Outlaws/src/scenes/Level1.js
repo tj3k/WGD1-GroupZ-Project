@@ -17,7 +17,7 @@ class Level1 extends Phaser.Scene {
 	editorCreate() {
 
 		// background
-		this.add.tileSprite(640, 360, 1280, 720, "background");
+		const background = this.add.tileSprite(640, 360, 1280, 720, "background");
 
 		// barflyTest
 		const barflyTest = this.add.ellipse(272, 448, 128, 128);
@@ -150,9 +150,6 @@ class Level1 extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
-
-		// this.input.on;
-		this.cameras.main.startFollow(pointer, true, 0.1, 0.1);
 
 	}
 
