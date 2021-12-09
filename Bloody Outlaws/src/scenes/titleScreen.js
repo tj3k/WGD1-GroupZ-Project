@@ -20,15 +20,8 @@ class titleScreen extends Phaser.Scene {
 		// background
 		const background = this.add.tileSprite(640, 360, 1280, 720, "background");
 
-		// text_1
-		const text_1 = this.add.text(640, 512, "", {});
-		text_1.setOrigin(0.5, 0.5);
-		text_1.text = "Made with\nPhaser 3 + Phaser Editor 2D";
-		text_1.setStyle({"align":"center","backgroundColor":"","fontFamily":"Arial","fontSize":"30px","stroke":"#eedc8eff","strokeThickness":1,"shadow.offsetY":5,"shadow.blur":3,"shadow.stroke":true,"shadow.fill":true});
-		text_1.setPadding({"left":5,"right":5,"bottom":5});
-
 		// GameLogo
-		const gameLogo = this.add.image(640, 320, "GameLogo");
+		const gameLogo = this.add.image(640, 240, "GameLogo");
 		gameLogo.scaleX = 4;
 		gameLogo.scaleY = 4;
 
@@ -36,6 +29,26 @@ class titleScreen extends Phaser.Scene {
 		const cursor = this.add.image(-32, -32, "Cursor");
 		cursor.scaleX = 2;
 		cursor.scaleY = 2;
+
+		// bitmaptext
+		const bitmaptext = this.add.bitmapText(640, 432, "smallPixel7", "Made with\nPhaser 3 + Phaser Editor 2D");
+		bitmaptext.setOrigin(0.5, 0.5);
+		bitmaptext.text = "Made with\nPhaser 3 + Phaser Editor 2D";
+		bitmaptext.fontSize = 32;
+		bitmaptext.align = 1;
+		bitmaptext.letterSpacing = 1;
+		bitmaptext.dropShadowX = 5;
+		bitmaptext.dropShadowY = 5;
+
+		// bitmaptext_1
+		const bitmaptext_1 = this.add.bitmapText(640, 544, "smallPixel7", "Game By : Taylor Moon + Tembani Mdaya");
+		bitmaptext_1.setOrigin(0.5, 0.5);
+		bitmaptext_1.text = "Game By : Taylor Moon + Tembani Mdaya";
+		bitmaptext_1.fontSize = 32;
+		bitmaptext_1.align = 1;
+		bitmaptext_1.letterSpacing = 1;
+		bitmaptext_1.dropShadowX = 5;
+		bitmaptext_1.dropShadowY = 5;
 
 		this.background = background;
 		this.gameLogo = gameLogo;

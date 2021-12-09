@@ -20,10 +20,12 @@ class Level1 extends Phaser.Scene {
 		this.add.tileSprite(640, 360, 1280, 720, "background");
 
 		// barflyTest
-		const barflyTest = this.add.ellipse(224, 456, 128, 128);
+		const barflyTest = this.add.ellipse(272, 448, 128, 128);
 		barflyTest.angle = -90;
 		barflyTest.isFilled = true;
 		barflyTest.fillColor = 4163261;
+		barflyTest.isStroked = true;
+		barflyTest.lineWidth = 3;
 		barflyTest.smoothness = 9;
 
 		// bouncerTest
@@ -33,15 +35,19 @@ class Level1 extends Phaser.Scene {
 		bouncerTest.angle = -90;
 		bouncerTest.isFilled = true;
 		bouncerTest.fillColor = 13489968;
+		bouncerTest.isStroked = true;
+		bouncerTest.lineWidth = 2;
 		bouncerTest.smoothness = 9;
 
 		// dustTest
-		const dustTest = this.add.ellipse(560, 480, 128, 128);
+		const dustTest = this.add.ellipse(560, 472, 128, 128);
 		dustTest.scaleX = 0.6;
 		dustTest.scaleY = 0.6;
 		dustTest.angle = -90;
 		dustTest.isFilled = true;
 		dustTest.fillColor = 7024431;
+		dustTest.isStroked = true;
+		dustTest.lineWidth = 4;
 		dustTest.smoothness = 9;
 
 		// UI
@@ -80,17 +86,36 @@ class Level1 extends Phaser.Scene {
 		cursor.scaleX = 3;
 		cursor.scaleY = 3;
 
-		// healthText
-		const healthText = this.add.text(176, 624, "", {});
-		healthText.text = "20 / 20";
-		healthText.setStyle({"fontFamily":"Arial","fontSize":"50px","fontStyle":"bold","stroke":"#7b1616ff","shadow.blur":6,"shadow.stroke":true,"shadow.fill":true});
-		healthText.setPadding({"left":5,"right":5});
+		// healthCounter
+		const healthCounter = this.add.bitmapText(184, 648, "smallPixel7", "20/20");
+		healthCounter.setOrigin(0, 0.5);
+		healthCounter.text = "20/20";
+		healthCounter.fontSize = 50;
+		healthCounter.dropShadowY = 10;
 
-		// ammoText
-		const ammoText = this.add.text(992, 624, "", {});
-		ammoText.text = "6 / 6";
-		ammoText.setStyle({"align":"right","fontFamily":"Arial","fontSize":"50px","fontStyle":"bold","stroke":"#7b1616ff","shadow.blur":6,"shadow.stroke":true,"shadow.fill":true});
-		ammoText.setPadding({"left":5,"right":5});
+		// ammoCounter
+		const ammoCounter = this.add.bitmapText(1096, 648, "smallPixel7", "6/6");
+		ammoCounter.setOrigin(1, 0.5);
+		ammoCounter.text = "6/6";
+		ammoCounter.fontSize = 50;
+		ammoCounter.align = 2;
+		ammoCounter.dropShadowY = 10;
+
+		// scoreText
+		const scoreText = this.add.bitmapText(640, 609, "smallPixel7", "SCORE:");
+		scoreText.setOrigin(0.5, 0.5);
+		scoreText.text = "SCORE:";
+		scoreText.fontSize = 40;
+		scoreText.align = 1;
+		scoreText.dropShadowY = 10;
+
+		// scoreCounter
+		const scoreCounter = this.add.bitmapText(640, 670, "smallPixel7", "0");
+		scoreCounter.setOrigin(0.5, 0.5);
+		scoreCounter.text = "0";
+		scoreCounter.fontSize = 75;
+		scoreCounter.align = 1;
+		scoreCounter.dropShadowY = 10;
 
 		// lists
 		const enemies = []
@@ -98,6 +123,7 @@ class Level1 extends Phaser.Scene {
 		this.barflyTest = barflyTest;
 		this.bouncerTest = bouncerTest;
 		this.dustTest = dustTest;
+		this.uI = uI;
 		this.cursor = cursor;
 		this.enemies = enemies;
 
@@ -110,6 +136,8 @@ class Level1 extends Phaser.Scene {
 	bouncerTest;
 	/** @type {Phaser.GameObjects.Ellipse} */
 	dustTest;
+	/** @type {Phaser.GameObjects.Layer} */
+	uI;
 	/** @type {Phaser.GameObjects.Image} */
 	cursor;
 	/** @type {Array<any>} */

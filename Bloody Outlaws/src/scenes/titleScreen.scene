@@ -25,28 +25,6 @@
             "height": 720
         },
         {
-            "type": "Text",
-            "id": "b2b3dbd5-2106-41fa-8a04-9b511e3401a9",
-            "label": "text_1",
-            "components": [],
-            "x": 640,
-            "y": 512,
-            "text": "Made with\nPhaser 3 + Phaser Editor 2D",
-            "paddingLeft": 5,
-            "paddingRight": 5,
-            "paddingBottom": 5,
-            "align": "center",
-            "fontFamily": "Arial",
-            "fontSize": "30px",
-            "stroke": "#eedc8eff",
-            "strokeThickness": 1,
-            "backgroundColor": "",
-            "shadow.offsetY": 5,
-            "shadow.stroke": true,
-            "shadow.fill": true,
-            "shadow.blur": 3
-        },
-        {
             "type": "Image",
             "id": "8930b95f-2506-4d79-b06c-ba5a9c174360",
             "label": "GameLogo",
@@ -56,7 +34,7 @@
                 "key": "GameLogo"
             },
             "x": 640,
-            "y": 320,
+            "y": 240,
             "scaleX": 4,
             "scaleY": 4
         },
@@ -72,6 +50,36 @@
             "y": -32,
             "scaleX": 2,
             "scaleY": 2
+        },
+        {
+            "type": "BitmapText",
+            "id": "7c0aee11-729f-4c36-82d2-3bb692c8deec",
+            "label": "bitmaptext",
+            "components": [],
+            "x": 640,
+            "y": 432,
+            "text": "Made with\nPhaser 3 + Phaser Editor 2D",
+            "font": "smallPixel7",
+            "align": 1,
+            "fontSize": 32,
+            "letterSpacing": 1,
+            "dropShadowX": 5,
+            "dropShadowY": 5
+        },
+        {
+            "type": "BitmapText",
+            "id": "9f5c7ad9-fdbb-42b1-a856-276314cefab1",
+            "label": "bitmaptext_1",
+            "components": [],
+            "x": 640,
+            "y": 544,
+            "text": "Game By : Taylor Moon + Tembani Mdaya",
+            "font": "smallPixel7",
+            "align": 1,
+            "fontSize": 32,
+            "letterSpacing": 1,
+            "dropShadowX": 5,
+            "dropShadowY": 5
         }
     ],
     "plainObjects": [],
