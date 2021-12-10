@@ -27,65 +27,101 @@
             "height": 720
         },
         {
-            "type": "Ellipse",
-            "id": "a605cbd2-b13d-4181-a1dd-8209144270ab",
-            "label": "barflyTest",
+            "type": "TileSprite",
+            "id": "eb6d3b3b-a339-42d3-99d9-9801324420c4",
+            "label": "middle",
             "scope": "CLASS",
-            "components": [
-                "PushOnClick"
-            ],
-            "x": 272,
-            "y": 448,
-            "angle": -90,
-            "isFilled": true,
-            "fillColor": "#3f86bd",
-            "lineWidth": 3,
-            "isStroked": true,
-            "width": 128,
-            "height": 128,
-            "smoothness": 9
+            "components": [],
+            "texture": {
+                "key": "middle"
+            },
+            "x": 640,
+            "y": 264,
+            "width": 1280,
+            "height": 326
         },
         {
-            "type": "Ellipse",
-            "id": "2c834d77-1faa-46c2-8a56-78ee4ecb08a8",
-            "label": "bouncerTest",
+            "type": "TileSprite",
+            "id": "05342799-da2d-4917-851a-2eac5e8f19cd",
+            "label": "foreground",
             "scope": "CLASS",
-            "components": [
-                "PushOnClick"
-            ],
-            "x": 400,
-            "y": 424,
-            "scaleX": 1.5,
-            "scaleY": 1.5,
-            "angle": -90,
-            "isFilled": true,
-            "fillColor": "#cdd730",
-            "lineWidth": 2,
-            "isStroked": true,
-            "width": 128,
-            "height": 128,
-            "smoothness": 9
+            "components": [],
+            "texture": {
+                "key": "foreground"
+            },
+            "x": 640,
+            "y": 360,
+            "width": 1280,
+            "height": 720
         },
         {
-            "type": "Ellipse",
-            "id": "98623aca-b54a-4513-845c-737318a5a8f4",
-            "label": "dustTest",
+            "type": "Layer",
+            "id": "baf7b90a-c4fc-4b9c-87de-66b5dd6b7e80",
+            "label": "enemyLayer",
             "scope": "CLASS",
-            "components": [
-                "PushOnClick"
-            ],
-            "x": 560,
-            "y": 472,
-            "scaleX": 0.6,
-            "scaleY": 0.6,
-            "angle": -90,
-            "isFilled": true,
-            "fillColor": "#6b2f2f",
-            "lineWidth": 4,
-            "isStroked": true,
-            "width": 128,
-            "height": 128,
-            "smoothness": 9
+            "components": [],
+            "list": [
+                {
+                    "type": "Ellipse",
+                    "id": "a605cbd2-b13d-4181-a1dd-8209144270ab",
+                    "label": "barfly",
+                    "scope": "CLASS",
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "x": 336,
+                    "y": 504,
+                    "angle": -90,
+                    "originX": 0.045,
+                    "isFilled": true,
+                    "fillColor": "#3f86bd",
+                    "lineWidth": 4,
+                    "isStroked": true,
+                    "width": 128,
+                    "height": 128,
+                    "smoothness": 9
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "2c834d77-1faa-46c2-8a56-78ee4ecb08a8",
+                    "label": "bouncer",
+                    "scope": "CLASS",
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "x": 432,
+                    "y": 472,
+                    "angle": -90,
+                    "originX": 0.045,
+                    "isFilled": true,
+                    "fillColor": "#cdd730",
+                    "lineWidth": 4,
+                    "isStroked": true,
+                    "width": 128,
+                    "height": 128,
+                    "smoothness": 9
+                },
+                {
+                    "type": "Ellipse",
+                    "id": "98623aca-b54a-4513-845c-737318a5a8f4",
+                    "label": "dust",
+                    "scope": "CLASS",
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "x": 584,
+                    "y": 504,
+                    "angle": -90,
+                    "originX": 0.045,
+                    "isFilled": true,
+                    "fillColor": "#6b2f2f",
+                    "lineWidth": 4,
+                    "isStroked": true,
+                    "width": 128,
+                    "height": 128,
+                    "smoothness": 9
+                }
+            ]
         },
         {
             "type": "Layer",
@@ -95,9 +131,23 @@
             "components": [],
             "list": [
                 {
+                    "type": "Sprite",
+                    "id": "f9446ec8-08c8-4d44-ad8d-403480555eaa",
+                    "label": "cursor",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "Cursor"
+                    },
+                    "x": -48,
+                    "y": -48,
+                    "scaleX": 3,
+                    "scaleY": 3
+                },
+                {
                     "type": "Image",
                     "id": "756d9ae7-07b9-4bca-b197-a5d22230c764",
-                    "label": "uI_Border",
+                    "label": "ui_Border",
                     "components": [],
                     "texture": {
                         "key": "UI_Border"
@@ -134,7 +184,7 @@
                 {
                     "type": "Image",
                     "id": "890a0061-165f-4774-8731-ee2723bf0405",
-                    "label": "uI_Ammo",
+                    "label": "ui_Ammo",
                     "components": [],
                     "texture": {
                         "key": "UI_Ammo"
@@ -147,7 +197,7 @@
                 {
                     "type": "Image",
                     "id": "bdf846b1-66bc-46ae-8f12-b81d951b0a82",
-                    "label": "uI_Health",
+                    "label": "ui_Health",
                     "components": [],
                     "texture": {
                         "key": "UI_Health"
@@ -161,26 +211,29 @@
                     "type": "BitmapText",
                     "id": "6c220b7d-aa99-4dfc-932e-ca51608b1bbf",
                     "label": "healthCounter",
+                    "scope": "CLASS",
                     "components": [],
                     "x": 184,
                     "y": 648,
                     "originX": 0,
-                    "text": "20/20",
+                    "text": "0/0",
                     "font": "smallPixel7",
                     "fontSize": 50,
                     "dropShadowY": 10
                 },
                 {
                     "type": "BitmapText",
-                    "id": "b632e3f8-f994-4302-aa0a-f9365e08bb18",
-                    "label": "scoreCounter",
+                    "id": "c567843b-9b68-4da1-9d79-01e636065734",
+                    "label": "ammoCounter",
+                    "scope": "CLASS",
                     "components": [],
-                    "x": 640,
-                    "y": 670,
-                    "text": "0",
+                    "x": 1096,
+                    "y": 648,
+                    "originX": 1,
+                    "text": "0/0",
                     "font": "smallPixel7",
-                    "align": 1,
-                    "fontSize": 75,
+                    "align": 2,
+                    "fontSize": 50,
                     "dropShadowY": 10
                 },
                 {
@@ -198,33 +251,32 @@
                 },
                 {
                     "type": "BitmapText",
-                    "id": "c567843b-9b68-4da1-9d79-01e636065734",
-                    "label": "ammoCounter",
+                    "id": "b632e3f8-f994-4302-aa0a-f9365e08bb18",
+                    "label": "scoreCounter",
+                    "scope": "CLASS",
                     "components": [],
-                    "x": 1096,
-                    "y": 648,
-                    "originX": 1,
-                    "text": "6/6",
+                    "x": 640,
+                    "y": 670,
+                    "text": "0",
                     "font": "smallPixel7",
-                    "align": 2,
-                    "fontSize": 50,
+                    "align": 1,
+                    "fontSize": 75,
                     "dropShadowY": 10
                 }
             ]
         },
         {
-            "type": "Image",
-            "id": "f9446ec8-08c8-4d44-ad8d-403480555eaa",
-            "label": "cursor",
+            "type": "BitmapText",
+            "id": "111dfe4f-91eb-489b-aeb0-6caa6881cce9",
+            "label": "reloadIndicator",
             "scope": "CLASS",
             "components": [],
-            "texture": {
-                "key": "Cursor"
-            },
-            "x": 1120,
-            "y": 472,
-            "scaleX": 3,
-            "scaleY": 3
+            "x": 640,
+            "y": 128,
+            "visible": false,
+            "text": "RELOAD!!!",
+            "font": "smallPixel7",
+            "fontSize": 80
         }
     ],
     "plainObjects": [],

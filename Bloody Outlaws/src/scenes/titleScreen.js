@@ -20,15 +20,16 @@ class titleScreen extends Phaser.Scene {
 		// background
 		const background = this.add.tileSprite(640, 360, 1280, 720, "background");
 
+		// middle
+		const middle = this.add.tileSprite(640, 272, 1280, 326, "middle");
+
+		// foreground
+		const foreground = this.add.tileSprite(640, 368, 1280, 720, "foreground");
+
 		// GameLogo
-		const gameLogo = this.add.image(640, 240, "GameLogo");
+		const gameLogo = this.add.image(640, 224, "GameLogo");
 		gameLogo.scaleX = 4;
 		gameLogo.scaleY = 4;
-
-		// cursor
-		const cursor = this.add.image(-48, -48, "Cursor");
-		cursor.scaleX = 3;
-		cursor.scaleY = 3;
 
 		// bitmaptext
 		const bitmaptext = this.add.bitmapText(640, 432, "smallPixel7", "Made with\nPhaser 3 + Phaser Editor 2D");
@@ -41,7 +42,7 @@ class titleScreen extends Phaser.Scene {
 		bitmaptext.dropShadowY = 5;
 
 		// bitmaptext_1
-		const bitmaptext_1 = this.add.bitmapText(640, 544, "smallPixel7", "Game By : Taylor Moon + Tembani Mdaya");
+		const bitmaptext_1 = this.add.bitmapText(640, 512, "smallPixel7", "Game By : Taylor Moon + Tembani Mdaya");
 		bitmaptext_1.setOrigin(0.5, 0.5);
 		bitmaptext_1.text = "Game By : Taylor Moon + Tembani Mdaya";
 		bitmaptext_1.fontSize = 32;
@@ -50,10 +51,17 @@ class titleScreen extends Phaser.Scene {
 		bitmaptext_1.dropShadowX = 5;
 		bitmaptext_1.dropShadowY = 5;
 
+		// cursor
+		const cursor = this.add.sprite(-48, -48, "Cursor");
+		cursor.scaleX = 3;
+		cursor.scaleY = 3;
+
 		// gameLogo (components)
 		new PushOnClick(gameLogo);
 
 		this.background = background;
+		this.middle = middle;
+		this.foreground = foreground;
 		this.gameLogo = gameLogo;
 		this.cursor = cursor;
 
@@ -62,9 +70,13 @@ class titleScreen extends Phaser.Scene {
 
 	/** @type {Phaser.GameObjects.TileSprite} */
 	background;
+	/** @type {Phaser.GameObjects.TileSprite} */
+	middle;
+	/** @type {Phaser.GameObjects.TileSprite} */
+	foreground;
 	/** @type {Phaser.GameObjects.Image} */
 	gameLogo;
-	/** @type {Phaser.GameObjects.Image} */
+	/** @type {Phaser.GameObjects.Sprite} */
 	cursor;
 
 	/* START-USER-CODE */
@@ -75,9 +87,12 @@ class titleScreen extends Phaser.Scene {
 
 		this.editorCreate();
 
+		// Disables context menu when right-clicking so we can use it to reload the gun.
+		this.input.mouse.disableContextMenu();
+
 		// Once mouse clicks, runs enterPressed function.
 		this.input.on("pointerdown", this.enterPressed, this);
-		
+
 		// this.input.on('pointerdown', function (pointer) {
 		// 	enterPressed();
 		// }, this);
@@ -96,14 +111,15 @@ class titleScreen extends Phaser.Scene {
 
 	update()	{
 
-		// Moves background to the left slowly. The image loops because it's a TileSprite.
-		this.background.tilePositionX += 0.5;
+		// Parallax Scrolling on the background (for now, just moving to the left slowly).
+		this.middle.tilePositionX += 0.1;
+		this.foreground.tilePositionX += 0.5;
 
-		// Supposed to move the crosshair, not working...
+		// Moves the Crosshair
 			this.input.on('pointermove', function (pointer)	{
-			cursor.x = pointer.x;
-			cursor.y = pointer.y;
-		})
+			this.cursor.x = pointer.x;
+			this.cursor.y = pointer.y;
+		}, this)
 	}
 
 	/* END-USER-CODE */

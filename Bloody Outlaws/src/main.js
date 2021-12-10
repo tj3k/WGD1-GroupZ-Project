@@ -6,6 +6,14 @@ window.addEventListener('load', function () {
 		height: 720,
 		type: Phaser.AUTO,
 		pixelArt: true,
+		physics: {
+			default: 'arcade',
+			arcade: {
+				gravity: {
+					y: 10
+				}
+			}
+		},
         backgroundColor: "#242424",
 		scale: {
 			mode: Phaser.Scale.FIT,

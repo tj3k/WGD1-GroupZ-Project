@@ -25,6 +25,34 @@
             "height": 720
         },
         {
+            "type": "TileSprite",
+            "id": "e1e1a0e9-be9c-4641-81fd-9bae3bfc48d7",
+            "label": "middle",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "middle"
+            },
+            "x": 640,
+            "y": 272,
+            "width": 1280,
+            "height": 326
+        },
+        {
+            "type": "TileSprite",
+            "id": "9df0cd54-b413-4b7e-89d9-d986666a1358",
+            "label": "foreground",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "foreground"
+            },
+            "x": 640,
+            "y": 368,
+            "width": 1280,
+            "height": 720
+        },
+        {
             "type": "Image",
             "id": "8930b95f-2506-4d79-b06c-ba5a9c174360",
             "label": "GameLogo",
@@ -36,23 +64,9 @@
                 "key": "GameLogo"
             },
             "x": 640,
-            "y": 240,
+            "y": 224,
             "scaleX": 4,
             "scaleY": 4
-        },
-        {
-            "type": "Image",
-            "id": "9c41c399-89a2-4a3c-9678-025318b4e025",
-            "label": "cursor",
-            "scope": "CLASS",
-            "components": [],
-            "texture": {
-                "key": "Cursor"
-            },
-            "x": -48,
-            "y": -48,
-            "scaleX": 3,
-            "scaleY": 3
         },
         {
             "type": "BitmapText",
@@ -75,7 +89,7 @@
             "label": "bitmaptext_1",
             "components": [],
             "x": 640,
-            "y": 544,
+            "y": 512,
             "text": "Game By : Taylor Moon + Tembani Mdaya",
             "font": "smallPixel7",
             "align": 1,
@@ -83,6 +97,20 @@
             "letterSpacing": 1,
             "dropShadowX": 5,
             "dropShadowY": 5
+        },
+        {
+            "type": "Sprite",
+            "id": "9c41c399-89a2-4a3c-9678-025318b4e025",
+            "label": "cursor",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "Cursor"
+            },
+            "x": -48,
+            "y": -48,
+            "scaleX": 3,
+            "scaleY": 3
         }
     ],
     "plainObjects": [],

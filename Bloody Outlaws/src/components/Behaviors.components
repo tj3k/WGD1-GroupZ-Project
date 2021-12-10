@@ -11,6 +11,43 @@
             "baseClass": "UserComponent",
             "gameObjectType": "Phaser.GameObjects.Text",
             "properties": []
+        },
+        {
+            "name": "Enemy",
+            "baseClass": "UserComponent",
+            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "properties": [
+                {
+                    "name": "name",
+                    "label": "Name",
+                    "tooltip": "Name of Enemy",
+                    "defValue": "barfly",
+                    "customDefinition": false,
+                    "type": {
+                        "id": "string"
+                    }
+                },
+                {
+                    "name": "health",
+                    "label": "health",
+                    "tooltip": "Total Health",
+                    "defValue": 6,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                },
+                {
+                    "name": "strength",
+                    "label": "Strength",
+                    "tooltip": "How much damage they can inflict on player",
+                    "defValue": 3,
+                    "customDefinition": false,
+                    "type": {
+                        "id": "number"
+                    }
+                }
+            ]
         }
     ],
     "meta": {

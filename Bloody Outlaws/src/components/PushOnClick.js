@@ -32,9 +32,9 @@ class PushOnClick extends UserComponent {
 
 			this.scene.add.tween({
 				targets: this.gameObject,
-				scaleX: "*=0.8",
-				scaleY: "*=0.8",
-				duration: 80,
+				scaleX: "*=0.85",
+				scaleY: "*=0.85",
+				duration: 40,
 				yoyo: true
 			});
 		});

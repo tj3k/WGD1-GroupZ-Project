@@ -10,6 +10,19 @@ class Level1 extends Phaser.Scene {
 
 		/* START-USER-CTR-CODE */
 		// Write your code here.
+
+		// Setting up player variables
+		this.totalHealth = 20;
+		this.health = this.totalHealth;
+
+		this.totalAmmo = 6;
+		this.ammo = this.totalAmmo;
+
+		this.playerAlive = true;
+		this.playerHurt = false;
+
+		this.score = 0;
+
 		/* END-USER-CTR-CODE */
 	}
 
@@ -19,43 +32,60 @@ class Level1 extends Phaser.Scene {
 		// background
 		const background = this.add.tileSprite(640, 360, 1280, 720, "background");
 
-		// barflyTest
-		const barflyTest = this.add.ellipse(272, 448, 128, 128);
-		barflyTest.angle = -90;
-		barflyTest.isFilled = true;
-		barflyTest.fillColor = 4163261;
-		barflyTest.isStroked = true;
-		barflyTest.lineWidth = 3;
-		barflyTest.smoothness = 9;
+		// middle
+		const middle = this.add.tileSprite(640, 264, 1280, 326, "middle");
 
-		// bouncerTest
-		const bouncerTest = this.add.ellipse(400, 424, 128, 128);
-		bouncerTest.scaleX = 1.5;
-		bouncerTest.scaleY = 1.5;
-		bouncerTest.angle = -90;
-		bouncerTest.isFilled = true;
-		bouncerTest.fillColor = 13489968;
-		bouncerTest.isStroked = true;
-		bouncerTest.lineWidth = 2;
-		bouncerTest.smoothness = 9;
+		// foreground
+		const foreground = this.add.tileSprite(640, 360, 1280, 720, "foreground");
 
-		// dustTest
-		const dustTest = this.add.ellipse(560, 472, 128, 128);
-		dustTest.scaleX = 0.6;
-		dustTest.scaleY = 0.6;
-		dustTest.angle = -90;
-		dustTest.isFilled = true;
-		dustTest.fillColor = 7024431;
-		dustTest.isStroked = true;
-		dustTest.lineWidth = 4;
-		dustTest.smoothness = 9;
+		// enemyLayer
+		const enemyLayer = this.add.layer();
+
+		// barfly
+		const barfly = this.add.ellipse(336, 504, 128, 128);
+		barfly.angle = -90;
+		barfly.setOrigin(0.045, 0.5);
+		barfly.isFilled = true;
+		barfly.fillColor = 4163261;
+		barfly.isStroked = true;
+		barfly.lineWidth = 4;
+		barfly.smoothness = 9;
+		enemyLayer.add(barfly);
+
+		// bouncer
+		const bouncer = this.add.ellipse(432, 472, 128, 128);
+		bouncer.angle = -90;
+		bouncer.setOrigin(0.045, 0.5);
+		bouncer.isFilled = true;
+		bouncer.fillColor = 13489968;
+		bouncer.isStroked = true;
+		bouncer.lineWidth = 4;
+		bouncer.smoothness = 9;
+		enemyLayer.add(bouncer);
+
+		// dust
+		const dust = this.add.ellipse(584, 504, 128, 128);
+		dust.angle = -90;
+		dust.setOrigin(0.045, 0.5);
+		dust.isFilled = true;
+		dust.fillColor = 7024431;
+		dust.isStroked = true;
+		dust.lineWidth = 4;
+		dust.smoothness = 9;
+		enemyLayer.add(dust);
 
 		// gameUI
 		const gameUI = this.add.layer();
 
-		// uI_Border
-		const uI_Border = this.add.image(640, 360, "UI_Border");
-		gameUI.add(uI_Border);
+		// cursor
+		const cursor = this.add.sprite(-48, -48, "Cursor");
+		cursor.scaleX = 3;
+		cursor.scaleY = 3;
+		gameUI.add(cursor);
+
+		// ui_Border
+		const ui_Border = this.add.image(640, 360, "UI_Border");
+		gameUI.add(ui_Border);
 
 		// ui_iconBox_ammo
 		const ui_iconBox_ammo = this.add.image(1176, 648, "UI_IconBox");
@@ -69,34 +99,34 @@ class Level1 extends Phaser.Scene {
 		ui_iconBox_health.scaleY = 3;
 		gameUI.add(ui_iconBox_health);
 
-		// uI_Ammo
-		const uI_Ammo = this.add.image(1176, 648, "UI_Ammo");
-		uI_Ammo.scaleX = 3;
-		uI_Ammo.scaleY = 3;
-		gameUI.add(uI_Ammo);
+		// ui_Ammo
+		const ui_Ammo = this.add.image(1176, 648, "UI_Ammo");
+		ui_Ammo.scaleX = 3;
+		ui_Ammo.scaleY = 3;
+		gameUI.add(ui_Ammo);
 
-		// uI_Health
-		const uI_Health = this.add.image(104, 648, "UI_Health");
-		uI_Health.scaleX = 3;
-		uI_Health.scaleY = 3;
-		gameUI.add(uI_Health);
+		// ui_Health
+		const ui_Health = this.add.image(104, 648, "UI_Health");
+		ui_Health.scaleX = 3;
+		ui_Health.scaleY = 3;
+		gameUI.add(ui_Health);
 
 		// healthCounter
-		const healthCounter = this.add.bitmapText(184, 648, "smallPixel7", "20/20");
+		const healthCounter = this.add.bitmapText(184, 648, "smallPixel7", "0/0");
 		healthCounter.setOrigin(0, 0.5);
-		healthCounter.text = "20/20";
+		healthCounter.text = "0/0";
 		healthCounter.fontSize = 50;
 		healthCounter.dropShadowY = 10;
 		gameUI.add(healthCounter);
 
-		// scoreCounter
-		const scoreCounter = this.add.bitmapText(640, 670, "smallPixel7", "0");
-		scoreCounter.setOrigin(0.5, 0.5);
-		scoreCounter.text = "0";
-		scoreCounter.fontSize = 75;
-		scoreCounter.align = 1;
-		scoreCounter.dropShadowY = 10;
-		gameUI.add(scoreCounter);
+		// ammoCounter
+		const ammoCounter = this.add.bitmapText(1096, 648, "smallPixel7", "0/0");
+		ammoCounter.setOrigin(1, 0.5);
+		ammoCounter.text = "0/0";
+		ammoCounter.fontSize = 50;
+		ammoCounter.align = 2;
+		ammoCounter.dropShadowY = 10;
+		gameUI.add(ammoCounter);
 
 		// scoreText
 		const scoreText = this.add.bitmapText(640, 609, "smallPixel7", "SCORE:");
@@ -107,38 +137,47 @@ class Level1 extends Phaser.Scene {
 		scoreText.dropShadowY = 10;
 		gameUI.add(scoreText);
 
-		// ammoCounter
-		const ammoCounter = this.add.bitmapText(1096, 648, "smallPixel7", "6/6");
-		ammoCounter.setOrigin(1, 0.5);
-		ammoCounter.text = "6/6";
-		ammoCounter.fontSize = 50;
-		ammoCounter.align = 2;
-		ammoCounter.dropShadowY = 10;
-		gameUI.add(ammoCounter);
+		// scoreCounter
+		const scoreCounter = this.add.bitmapText(640, 670, "smallPixel7", "0");
+		scoreCounter.setOrigin(0.5, 0.5);
+		scoreCounter.text = "0";
+		scoreCounter.fontSize = 75;
+		scoreCounter.align = 1;
+		scoreCounter.dropShadowY = 10;
+		gameUI.add(scoreCounter);
 
-		// cursor
-		const cursor = this.add.image(1120, 472, "Cursor");
-		cursor.scaleX = 3;
-		cursor.scaleY = 3;
+		// reloadIndicator
+		const reloadIndicator = this.add.bitmapText(640, 128, "smallPixel7", "RELOAD!!!");
+		reloadIndicator.setOrigin(0.5, 0.5);
+		reloadIndicator.visible = false;
+		reloadIndicator.text = "RELOAD!!!";
+		reloadIndicator.fontSize = 80;
 
 		// lists
-		const enemies = [barflyTest, bouncerTest, dustTest]
+		const enemies = [barfly, bouncer, dust]
 
-		// barflyTest (components)
-		new PushOnClick(barflyTest);
+		// barfly (components)
+		new PushOnClick(barfly);
 
-		// bouncerTest (components)
-		new PushOnClick(bouncerTest);
+		// bouncer (components)
+		new PushOnClick(bouncer);
 
-		// dustTest (components)
-		new PushOnClick(dustTest);
+		// dust (components)
+		new PushOnClick(dust);
 
 		this.background = background;
-		this.barflyTest = barflyTest;
-		this.bouncerTest = bouncerTest;
-		this.dustTest = dustTest;
+		this.middle = middle;
+		this.foreground = foreground;
+		this.enemyLayer = enemyLayer;
+		this.barfly = barfly;
+		this.bouncer = bouncer;
+		this.dust = dust;
 		this.gameUI = gameUI;
 		this.cursor = cursor;
+		this.healthCounter = healthCounter;
+		this.ammoCounter = ammoCounter;
+		this.scoreCounter = scoreCounter;
+		this.reloadIndicator = reloadIndicator;
 		this.enemies = enemies;
 
 		this.events.emit("scene-awake");
@@ -146,16 +185,30 @@ class Level1 extends Phaser.Scene {
 
 	/** @type {Phaser.GameObjects.TileSprite} */
 	background;
+	/** @type {Phaser.GameObjects.TileSprite} */
+	middle;
+	/** @type {Phaser.GameObjects.TileSprite} */
+	foreground;
+	/** @type {Phaser.GameObjects.Layer} */
+	enemyLayer;
 	/** @type {Phaser.GameObjects.Ellipse} */
-	barflyTest;
+	barfly;
 	/** @type {Phaser.GameObjects.Ellipse} */
-	bouncerTest;
+	bouncer;
 	/** @type {Phaser.GameObjects.Ellipse} */
-	dustTest;
+	dust;
 	/** @type {Phaser.GameObjects.Layer} */
 	gameUI;
-	/** @type {Phaser.GameObjects.Image} */
+	/** @type {Phaser.GameObjects.Sprite} */
 	cursor;
+	/** @type {Phaser.GameObjects.BitmapText} */
+	healthCounter;
+	/** @type {Phaser.GameObjects.BitmapText} */
+	ammoCounter;
+	/** @type {Phaser.GameObjects.BitmapText} */
+	scoreCounter;
+	/** @type {Phaser.GameObjects.BitmapText} */
+	reloadIndicator;
 	/** @type {Phaser.GameObjects.Ellipse[]} */
 	enemies;
 
@@ -163,37 +216,98 @@ class Level1 extends Phaser.Scene {
 
 	// Write your code here
 
-	create() {
+	// private enemyArray: {health: number, sprite: Phaser.GameObjects.TileSprite }[] =
+
+	create()
+	{
 
 		this.editorCreate();
 
-		this.input.on('pointermove', function (pointer)	{
-		this.cameras.x = pointer.x;
-		this.cameras.y = pointer.y;
-	});
+		/*	TODO: Idea - Zoom the camera in slightly, add a swaying effect with startFollow to give the game juice.
+			Hoping to only move the background and not the UI. Unnecessary.
+		*/
+		// this.cameras.main.setZoom(1.1)
+		// this.cameras.main.startFollow(this.cursor, 10, 0.1,0.1);
 
-		// this.cameras.main.startFollow(this.pointer);
-
-		this.input.on('pointerdown', function () {
-            this.cameras.main.shake(250, 0.004);
-			this.cameras.main.flash(50);
-			// this.cameras.main.zoomTo(2, 500, 'Bounce');
-			// this.cameras.on('camerazoomcomplete', -2, 700, 'Bounce');
+		// Making enemies interactive so you get feedback from shooting them exclusively.
+		this.barfly.setInteractive();
+		this.bouncer.setInteractive();
+		this.dust.setInteractive();
 
 
-        }, this);
+		/*
+		Check if ammo is empty or full, displays text saying "RELOAD!!!" if empty.
+		Otherwise, triggers a shake and flash effect, indicating you shot.
+		Latter function not working atm. Still shakes the same as before.
+		*/
+		if (this.ammo > 0)
+		{
+			this.input.on('pointerdown', function () {
 
-		// Should give feedback to player that their shot landed. Not Working. Utilise Components!
-		// this.enemies.on('pointerdown', function (pointer) {
-		// 	this.setTint(0xff0000);
-		// });
+				// this.input.mouse.requestPointerLock();
+				this.cameras.main.shake(250, 0.004);
+				this.cameras.main.flash(50, 150, 150, 150);
+				this.ammo--;
+			}, this);
+
+		} else if (this.ammo <= 0)	{
+
+			this.input.on('pointerdown', function () {
+
+				// this.input.mouse.requestPointerLock();
+				// this.cameras.main.shake(50, 0.001);
+				// this.cameras.main.flash(25, 150, 25, 25);
+				// this.ammo++;
+
+			}, this);
+		}
 
 	}
 
-	update()	{
+	update()
+	{
 
-		// Slowly moves background to the left. To create a parallax effect.
-		this.background.tilePositionX += 0.5;
+		// Parallax Scrolling on the background (for now, just moving to the left slowly).
+		this.middle.tilePositionX += 0.1;
+		this.foreground.tilePositionX += 0.5;
+
+		// // Checking if player ran out of health. Breaks game for some reason.
+		// if (this.playerAlive = true) {
+		// 	return;
+		// } else if (this.playerAlive = false) {
+		// 	console.log("You're Dead")
+		// }
+
+		// Check if ammo is empty, makes reload warning visible on screen.
+		if(this.ammo <= 0)
+		{
+			this.ammo = 0;
+
+			// this.cameras.main.once.shake(50, 0.001);
+			// this.cameras.main.once.flash(25, 150, 25, 25);
+
+			this.reloadIndicator.setVisible(true);
+
+		} else {
+
+			this.reloadIndicator.setVisible(false);
+
+
+		}
+
+		// Updates the health and ammo counter on screen.
+		this.healthCounter.setText(['' + this.health + '/' + this.totalHealth + '']);
+		this.ammoCounter.setText(['' + this.ammo + '/' + this.totalAmmo + '']);
+		this.scoreCounter.setText(['' + this.score + '']);
+
+
+		// Makes the crosshair follow the mouses position.
+		this.input.on('pointermove', function (pointer) {
+			this.cursor.x = pointer.x;
+			this.cursor.y = pointer.y;
+
+		}, this);
+
 	}
 
 	/* END-USER-CODE */

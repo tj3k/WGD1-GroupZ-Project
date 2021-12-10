@@ -12,15 +12,30 @@
                 "key": "Cursor"
             },
             {
+                "url": "assets/images/backgrounds/foreground.png",
+                "type": "image",
+                "key": "foreground"
+            },
+            {
                 "url": "assets/images/UI/GameLogo.png",
                 "type": "image",
                 "key": "GameLogo"
+            },
+            {
+                "url": "assets/images/backgrounds/middle.png",
+                "type": "image",
+                "key": "middle"
             },
             {
                 "textureURL": "assets/fonts/smallPixel7_0.png",
                 "fontDataURL": "assets/fonts/smallPixel7.xml",
                 "type": "bitmapFont",
                 "key": "smallPixel7"
+            },
+            {
+                "url": "src/prefabs/testEnemy.js",
+                "type": "script",
+                "key": "testEnemy"
             },
             {
                 "url": "assets/images/UI/UI_Ammo_V2.png",
