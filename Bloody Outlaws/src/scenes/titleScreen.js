@@ -26,9 +26,9 @@ class titleScreen extends Phaser.Scene {
 		gameLogo.scaleY = 4;
 
 		// cursor
-		const cursor = this.add.image(-32, -32, "Cursor");
-		cursor.scaleX = 2;
-		cursor.scaleY = 2;
+		const cursor = this.add.image(-48, -48, "Cursor");
+		cursor.scaleX = 3;
+		cursor.scaleY = 3;
 
 		// bitmaptext
 		const bitmaptext = this.add.bitmapText(640, 432, "smallPixel7", "Made with\nPhaser 3 + Phaser Editor 2D");
@@ -50,8 +50,12 @@ class titleScreen extends Phaser.Scene {
 		bitmaptext_1.dropShadowX = 5;
 		bitmaptext_1.dropShadowY = 5;
 
+		// gameLogo (components)
+		new PushOnClick(gameLogo);
+
 		this.background = background;
 		this.gameLogo = gameLogo;
+		this.cursor = cursor;
 
 		this.events.emit("scene-awake");
 	}
@@ -60,6 +64,8 @@ class titleScreen extends Phaser.Scene {
 	background;
 	/** @type {Phaser.GameObjects.Image} */
 	gameLogo;
+	/** @type {Phaser.GameObjects.Image} */
+	cursor;
 
 	/* START-USER-CODE */
 
@@ -70,10 +76,12 @@ class titleScreen extends Phaser.Scene {
 		this.editorCreate();
 
 		// Once mouse clicks, runs enterPressed function.
-		// this.input.on("pointerdown", this.enterPressed, this);
-		this.input.on('pointerdown', function () {
-			enterPressed();
-		}, this);
+		this.input.on("pointerdown", this.enterPressed, this);
+		
+		// this.input.on('pointerdown', function (pointer) {
+		// 	enterPressed();
+		// }, this);
+
 	}
 
 	enterPressed() {
@@ -92,10 +100,10 @@ class titleScreen extends Phaser.Scene {
 		this.background.tilePositionX += 0.5;
 
 		// Supposed to move the crosshair, not working...
-		// 	this.input.on('pointermove', function (pointer)	{
-		// 	cursor.x = pointer.x;
-		// 	cursor.y = pointer.y;
-		// })
+			this.input.on('pointermove', function (pointer)	{
+			cursor.x = pointer.x;
+			cursor.y = pointer.y;
+		})
 	}
 
 	/* END-USER-CODE */

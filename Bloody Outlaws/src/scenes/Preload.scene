@@ -14,9 +14,10 @@
     },
     "displayList": [
         {
-            "type": "Image",
+            "type": "Sprite",
             "id": "e413cbbf-ce25-4dad-a117-b7cf0791f655",
             "label": "chamber",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "UI_Chamber"
@@ -27,16 +28,17 @@
             "scaleY": 6
         },
         {
-            "type": "Text",
-            "id": "2ce42443-5227-4c9b-b498-e81f9a21cde3",
-            "label": "progress",
+            "type": "BitmapText",
+            "id": "a08a2d11-0a69-4376-b65d-62277cf87144",
+            "label": "progressBITMAP",
             "components": [
                 "PreloadText"
             ],
             "x": 640,
-            "y": 480,
+            "y": 496,
             "text": "0%",
-            "fontSize": "60px"
+            "font": "smallPixel7",
+            "fontSize": 80
         }
     ],
     "plainObjects": [],

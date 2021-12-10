@@ -18,9 +18,9 @@
             },
             {
                 "textureURL": "assets/fonts/smallPixel7_0.png",
-                "fontDataURL": "assets/fonts/smallPixel7.json",
+                "fontDataURL": "assets/fonts/smallPixel7.xml",
                 "type": "bitmapFont",
-                "key": "smallPixel"
+                "key": "smallPixel7"
             },
             {
                 "url": "assets/images/UI/UI_Ammo_V2.png",

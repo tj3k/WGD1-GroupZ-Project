@@ -2,6 +2,12 @@
     "section1": {
         "files": [
             {
+                "textureURL": "assets/fonts/smallPixel7_0.png",
+                "fontDataURL": "assets/fonts/smallPixel7.xml",
+                "type": "bitmapFont",
+                "key": "smallPixel7"
+            },
+            {
                 "url": "assets/images/UI/UI_Chamber.png",
                 "type": "image",
                 "key": "UI_Chamber"

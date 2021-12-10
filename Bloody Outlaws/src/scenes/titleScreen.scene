@@ -29,7 +29,9 @@
             "id": "8930b95f-2506-4d79-b06c-ba5a9c174360",
             "label": "GameLogo",
             "scope": "CLASS",
-            "components": [],
+            "components": [
+                "PushOnClick"
+            ],
             "texture": {
                 "key": "GameLogo"
             },
@@ -42,14 +44,15 @@
             "type": "Image",
             "id": "9c41c399-89a2-4a3c-9678-025318b4e025",
             "label": "cursor",
+            "scope": "CLASS",
             "components": [],
             "texture": {
                 "key": "Cursor"
             },
-            "x": -32,
-            "y": -32,
-            "scaleX": 2,
-            "scaleY": 2
+            "x": -48,
+            "y": -48,
+            "scaleX": 3,
+            "scaleY": 3
         },
         {
             "type": "BitmapText",

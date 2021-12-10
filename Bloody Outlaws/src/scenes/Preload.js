@@ -23,21 +23,26 @@ class Preload extends Phaser.Scene {
 	editorCreate() {
 
 		// chamber
-		const chamber = this.add.image(640, 320, "UI_Chamber");
+		const chamber = this.add.sprite(640, 320, "UI_Chamber");
 		chamber.scaleX = 6;
 		chamber.scaleY = 6;
 
-		// progress
-		const progress = this.add.text(640, 480, "", {});
-		progress.setOrigin(0.5, 0.5);
-		progress.text = "0%";
-		progress.setStyle({"fontSize":"60px"});
+		// progressBITMAP
+		const progressBITMAP = this.add.bitmapText(640, 496, "smallPixel7", "0%");
+		progressBITMAP.setOrigin(0.5, 0.5);
+		progressBITMAP.text = "0%";
+		progressBITMAP.fontSize = 80;
 
-		// progress (components)
-		new PreloadText(progress);
+		// progressBITMAP (components)
+		new PreloadText(progressBITMAP);
+
+		this.chamber = chamber;
 
 		this.events.emit("scene-awake");
 	}
+
+	/** @type {Phaser.GameObjects.Sprite} */
+	chamber;
 
 	/* START-USER-CODE */
 
@@ -49,7 +54,17 @@ class Preload extends Phaser.Scene {
 
 		this.editorPreload();
 
+		// Attempted to use smallPixel7 font for loading. Not Working.
+		// new PreloadText(progress2);
+
 		this.load.on(Phaser.Loader.Events.COMPLETE, () => this.scene.start("titleScreen"));
+	}
+
+	update() {
+
+		this.chamber.rotation += 0.02;
+		// 
+
 	}
 
 	/* END-USER-CODE */
