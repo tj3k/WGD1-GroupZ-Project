@@ -120,6 +120,21 @@
                     "width": 128,
                     "height": 128,
                     "smoothness": 9
+                },
+                {
+                    "prefabId": "3ecefe03-d80d-4a2a-ad88-b54571ed7ab2",
+                    "id": "cdd4fc0f-3e6a-44b6-9e8f-eabb6cc019c1",
+                    "unlock": [
+                        "x",
+                        "y"
+                    ],
+                    "label": "enemy",
+                    "scope": "CLASS",
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "x": 864,
+                    "y": 503.3998027255992
                 }
             ]
         },

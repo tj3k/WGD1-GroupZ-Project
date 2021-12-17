@@ -37,6 +37,7 @@ class PushOnClick extends UserComponent {
 				duration: 40,
 				yoyo: true
 			});
+
 		});
 	}
 

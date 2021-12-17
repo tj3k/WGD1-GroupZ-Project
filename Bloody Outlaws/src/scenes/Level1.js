@@ -18,10 +18,13 @@ class Level1 extends Phaser.Scene {
 		this.totalAmmo = 6;
 		this.ammo = this.totalAmmo;
 
-		this.playerAlive = true;
-		this.playerHurt = false;
+		this.isAlive = true;
+		this.isHurt = false;
 
 		this.score = 0;
+
+		// Enemy Variables
+
 
 		/* END-USER-CTR-CODE */
 	}
@@ -73,6 +76,11 @@ class Level1 extends Phaser.Scene {
 		dust.lineWidth = 4;
 		dust.smoothness = 9;
 		enemyLayer.add(dust);
+
+		// enemy
+		const enemy = new enemy(this, 864, 503.3998027255992);
+		enemy.fillColor = 16289679;
+		enemyLayer.add(enemy);
 
 		// gameUI
 		const gameUI = this.add.layer();
@@ -165,6 +173,9 @@ class Level1 extends Phaser.Scene {
 		// dust (components)
 		new PushOnClick(dust);
 
+		// enemy (components)
+		new PushOnClick(enemy);
+
 		this.background = background;
 		this.middle = middle;
 		this.foreground = foreground;
@@ -172,6 +183,7 @@ class Level1 extends Phaser.Scene {
 		this.barfly = barfly;
 		this.bouncer = bouncer;
 		this.dust = dust;
+		this.enemy = enemy;
 		this.gameUI = gameUI;
 		this.cursor = cursor;
 		this.healthCounter = healthCounter;
@@ -197,6 +209,8 @@ class Level1 extends Phaser.Scene {
 	bouncer;
 	/** @type {Phaser.GameObjects.Ellipse} */
 	dust;
+	/** @type {enemy} */
+	enemy;
 	/** @type {Phaser.GameObjects.Layer} */
 	gameUI;
 	/** @type {Phaser.GameObjects.Sprite} */
@@ -248,7 +262,10 @@ class Level1 extends Phaser.Scene {
 				this.cameras.main.shake(250, 0.004);
 				this.cameras.main.flash(50, 150, 150, 150);
 				this.ammo--;
+				// this.score = this.score + 10;
 			}, this);
+
+
 
 		} else if (this.ammo <= 0)	{
 
@@ -272,9 +289,9 @@ class Level1 extends Phaser.Scene {
 		this.foreground.tilePositionX += 0.5;
 
 		// // Checking if player ran out of health. Breaks game for some reason.
-		// if (this.playerAlive = true) {
+		// if (this.isAlive = true) {
 		// 	return;
-		// } else if (this.playerAlive = false) {
+		// } else if (this.isAlive = false) {
 		// 	console.log("You're Dead")
 		// }
 

@@ -27,29 +27,44 @@ class titleScreen extends Phaser.Scene {
 		const foreground = this.add.tileSprite(640, 368, 1280, 720, "foreground");
 
 		// GameLogo
-		const gameLogo = this.add.image(640, 224, "GameLogo");
+		const gameLogo = this.add.image(640, 248, "GameLogo");
 		gameLogo.scaleX = 4;
 		gameLogo.scaleY = 4;
 
-		// bitmaptext
-		const bitmaptext = this.add.bitmapText(640, 432, "smallPixel7", "Made with\nPhaser 3 + Phaser Editor 2D");
-		bitmaptext.setOrigin(0.5, 0.5);
-		bitmaptext.text = "Made with\nPhaser 3 + Phaser Editor 2D";
-		bitmaptext.fontSize = 32;
-		bitmaptext.align = 1;
-		bitmaptext.letterSpacing = 1;
-		bitmaptext.dropShadowX = 5;
-		bitmaptext.dropShadowY = 5;
+		// creditsText_1
+		const creditsText_1 = this.add.bitmapText(640, 608, "smallPixel7", "_______________________________________");
+		creditsText_1.setOrigin(0.5, 0.5);
+		creditsText_1.text = "_______________________________________";
+		creditsText_1.fontSize = 32;
+		creditsText_1.align = 1;
+		creditsText_1.letterSpacing = 1;
+		creditsText_1.dropShadowX = 5;
+		creditsText_1.dropShadowY = 5;
 
-		// bitmaptext_1
-		const bitmaptext_1 = this.add.bitmapText(640, 512, "smallPixel7", "Game By : Taylor Moon + Tembani Mdaya");
-		bitmaptext_1.setOrigin(0.5, 0.5);
-		bitmaptext_1.text = "Game By : Taylor Moon + Tembani Mdaya";
-		bitmaptext_1.fontSize = 32;
-		bitmaptext_1.align = 1;
-		bitmaptext_1.letterSpacing = 1;
-		bitmaptext_1.dropShadowX = 5;
-		bitmaptext_1.dropShadowY = 5;
+		// madeByText
+		const madeByText = this.add.bitmapText(640, 568, "smallPixel7", "Made with\nPhaser 3 + Phaser Editor 2D");
+		madeByText.setOrigin(0.5, 0.5);
+		madeByText.text = "Made with\nPhaser 3 + Phaser Editor 2D";
+		madeByText.fontSize = 32;
+		madeByText.align = 1;
+		madeByText.letterSpacing = 1;
+		madeByText.dropShadowX = 5;
+		madeByText.dropShadowY = 5;
+
+		// creditsText
+		const creditsText = this.add.bitmapText(640, 648, "smallPixel7", "Game By : Taylor Moon + Tembani Mdaya");
+		creditsText.setOrigin(0.5, 0.5);
+		creditsText.text = "Game By : Taylor Moon + Tembani Mdaya";
+		creditsText.fontSize = 32;
+		creditsText.align = 1;
+		creditsText.letterSpacing = 1;
+		creditsText.dropShadowX = 5;
+		creditsText.dropShadowY = 5;
+
+		// clickToPlay
+		const clickToPlay = this.add.sprite(640, 456, "clickToPlay");
+		clickToPlay.scaleX = 3;
+		clickToPlay.scaleY = 3;
 
 		// cursor
 		const cursor = this.add.sprite(-48, -48, "Cursor");
@@ -63,6 +78,7 @@ class titleScreen extends Phaser.Scene {
 		this.middle = middle;
 		this.foreground = foreground;
 		this.gameLogo = gameLogo;
+		this.clickToPlay = clickToPlay;
 		this.cursor = cursor;
 
 		this.events.emit("scene-awake");
@@ -76,6 +92,8 @@ class titleScreen extends Phaser.Scene {
 	foreground;
 	/** @type {Phaser.GameObjects.Image} */
 	gameLogo;
+	/** @type {Phaser.GameObjects.Sprite} */
+	clickToPlay;
 	/** @type {Phaser.GameObjects.Sprite} */
 	cursor;
 
@@ -93,6 +111,8 @@ class titleScreen extends Phaser.Scene {
 		// Once mouse clicks, runs enterPressed function.
 		this.input.on("pointerdown", this.enterPressed, this);
 
+		this.blinkText();
+
 		// this.input.on('pointerdown', function (pointer) {
 		// 	enterPressed();
 		// }, this);
@@ -101,12 +121,21 @@ class titleScreen extends Phaser.Scene {
 
 	enterPressed() {
 
+		this.clickToPlay.visible = false;
+
 		this.scene.start("Level1")
 	}
 
-	// TODO Blink text saying "Click to Play" or Similar.
-	blinkText()	{
+	// Blinks "Click to Play" text on screen.
+	blinkText() {
 
+		this.time.addEvent({
+			repeat: -1,
+			delay: 400,
+			callback: () => {
+				this.clickToPlay.visible = !this.clickToPlay.visible;
+			}
+		});
 	}
 
 	update()	{

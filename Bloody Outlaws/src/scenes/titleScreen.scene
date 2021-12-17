@@ -3,6 +3,8 @@
     "sceneType": "SCENE",
     "settings": {
         "snapEnabled": true,
+        "snapWidth": 8,
+        "snapHeight": 8,
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
         "sceneKey": "titleScreen",
@@ -64,17 +66,32 @@
                 "key": "GameLogo"
             },
             "x": 640,
-            "y": 224,
+            "y": 248,
             "scaleX": 4,
             "scaleY": 4
         },
         {
             "type": "BitmapText",
-            "id": "7c0aee11-729f-4c36-82d2-3bb692c8deec",
-            "label": "bitmaptext",
+            "id": "d55946b7-2135-4651-b948-4a0793e1dadd",
+            "label": "creditsText_1",
             "components": [],
             "x": 640,
-            "y": 432,
+            "y": 608,
+            "text": "_______________________________________",
+            "font": "smallPixel7",
+            "align": 1,
+            "fontSize": 32,
+            "letterSpacing": 1,
+            "dropShadowX": 5,
+            "dropShadowY": 5
+        },
+        {
+            "type": "BitmapText",
+            "id": "7c0aee11-729f-4c36-82d2-3bb692c8deec",
+            "label": "madeByText",
+            "components": [],
+            "x": 640,
+            "y": 568,
             "text": "Made with\nPhaser 3 + Phaser Editor 2D",
             "font": "smallPixel7",
             "align": 1,
@@ -86,10 +103,10 @@
         {
             "type": "BitmapText",
             "id": "9f5c7ad9-fdbb-42b1-a856-276314cefab1",
-            "label": "bitmaptext_1",
+            "label": "creditsText",
             "components": [],
             "x": 640,
-            "y": 512,
+            "y": 648,
             "text": "Game By : Taylor Moon + Tembani Mdaya",
             "font": "smallPixel7",
             "align": 1,
@@ -97,6 +114,20 @@
             "letterSpacing": 1,
             "dropShadowX": 5,
             "dropShadowY": 5
+        },
+        {
+            "type": "Sprite",
+            "id": "e0fd5f49-deee-4e5e-91e3-ee9dc5d70a14",
+            "label": "clickToPlay",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "clickToPlay"
+            },
+            "x": 640,
+            "y": 456,
+            "scaleX": 3,
+            "scaleY": 3
         },
         {
             "type": "Sprite",

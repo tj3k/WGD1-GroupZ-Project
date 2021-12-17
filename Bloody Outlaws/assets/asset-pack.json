@@ -7,6 +7,26 @@
                 "key": "background"
             },
             {
+                "url": "assets/images/enemy/bullets/bulletBig.png",
+                "type": "image",
+                "key": "bulletBig"
+            },
+            {
+                "url": "assets/images/enemy/bullets/bulletNormal.png",
+                "type": "image",
+                "key": "bulletNormal"
+            },
+            {
+                "url": "assets/images/enemy/bullets/bulletSmall.png",
+                "type": "image",
+                "key": "bulletSmall"
+            },
+            {
+                "url": "assets/images/UI/clickToPlay.png",
+                "type": "image",
+                "key": "clickToPlay"
+            },
+            {
                 "url": "assets/images/UI/Cursor.png",
                 "type": "image",
                 "key": "Cursor"
@@ -31,11 +51,6 @@
                 "fontDataURL": "assets/fonts/smallPixel7.xml",
                 "type": "bitmapFont",
                 "key": "smallPixel7"
-            },
-            {
-                "url": "src/prefabs/testEnemy.js",
-                "type": "script",
-                "key": "testEnemy"
             },
             {
                 "url": "assets/images/UI/UI_Ammo_V2.png",

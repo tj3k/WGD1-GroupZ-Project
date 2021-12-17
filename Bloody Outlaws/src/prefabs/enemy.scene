@@ -1,0 +1,47 @@
+{
+    "id": "3ecefe03-d80d-4a2a-ad88-b54571ed7ab2",
+    "settings": {
+        "createMethodName": "",
+        "preloadMethodName": "",
+        "compilerOutputLanguage": "JAVA_SCRIPT",
+        "exportClass": false,
+        "autoImport": false,
+        "generateAwakeHandler": false,
+        "compilerInsertSpaces": false,
+        "compilerTabSize": 4,
+        "borderWidth": 1280,
+        "borderHeight": 720,
+        "borderX": 0,
+        "borderY": 0
+    },
+    "sceneType": "PREFAB",
+    "displayList": [
+        {
+            "unlock": [
+                "x",
+                "y"
+            ],
+            "type": "Triangle",
+            "id": "06e97346-9f6f-4afc-8c4f-726eb421384a",
+            "label": "enemy",
+            "scope": "CLASS",
+            "components": [
+                "PushOnClick"
+            ],
+            "x": 0,
+            "y": 0,
+            "scaleX": 1.5,
+            "scaleY": 1.5,
+            "originY": 0.9968739725291624,
+            "isFilled": true,
+            "fillColor": "#f88f8f",
+            "lineWidth": 5,
+            "isStroked": true
+        }
+    ],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType"
+    }
+}
