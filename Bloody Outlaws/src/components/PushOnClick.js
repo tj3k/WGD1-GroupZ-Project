@@ -28,17 +28,17 @@ class PushOnClick extends UserComponent {
 
 	awake() {
 
-		this.gameObject.setInteractive().on("pointerdown", () => {
+			this.gameObject.setInteractive().on("pointerdown", () => {
 
-			this.scene.add.tween({
-				targets: this.gameObject,
-				scaleX: "*=0.85",
-				scaleY: "*=0.85",
-				duration: 40,
-				yoyo: true
+				this.scene.add.tween({
+					targets: this.gameObject,
+					scaleX: "*=0.85",
+					scaleY: "*=0.85",
+					duration: 40,
+					yoyo: true
+				});
+
 			});
-
-		});
 	}
 
 	/* END-USER-CODE */

@@ -1,0 +1,245 @@
+{
+	"textures": [
+		{
+			"image": "atlas-enemy.png",
+			"format": "RGBA8888",
+			"size": {
+				"w": 169,
+				"h": 124
+			},
+			"scale": 1,
+			"frames": [
+				{
+					"filename": "bulletBig.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 64,
+						"h": 64
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"frame": {
+						"x": 0,
+						"y": 0,
+						"w": 64,
+						"h": 64
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "bouncer1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 54,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 4,
+						"y": 0,
+						"w": 46,
+						"h": 60
+					},
+					"frame": {
+						"x": 0,
+						"y": 64,
+						"w": 46,
+						"h": 60
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 1
+					}
+				},
+				{
+					"filename": "bouncer2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 54,
+						"h": 60
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 54,
+						"h": 59
+					},
+					"frame": {
+						"x": 64,
+						"y": 0,
+						"w": 54,
+						"h": 59
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 1
+					}
+				},
+				{
+					"filename": "barfly2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 38,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 3,
+						"w": 38,
+						"h": 48
+					},
+					"frame": {
+						"x": 118,
+						"y": 0,
+						"w": 38,
+						"h": 48
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 1
+					}
+				},
+				{
+					"filename": "barfly1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 38,
+						"h": 51
+					},
+					"spriteSourceSize": {
+						"x": 3,
+						"y": 0,
+						"w": 32,
+						"h": 51
+					},
+					"frame": {
+						"x": 46,
+						"y": 64,
+						"w": 32,
+						"h": 51
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 1
+					}
+				},
+				{
+					"filename": "dust2.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 55,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 1,
+						"w": 55,
+						"h": 42
+					},
+					"frame": {
+						"x": 78,
+						"y": 59,
+						"w": 55,
+						"h": 42
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 1
+					}
+				},
+				{
+					"filename": "dust1.png",
+					"rotated": false,
+					"trimmed": true,
+					"sourceSize": {
+						"w": 55,
+						"h": 43
+					},
+					"spriteSourceSize": {
+						"x": 11,
+						"y": 0,
+						"w": 36,
+						"h": 43
+					},
+					"frame": {
+						"x": 133,
+						"y": 48,
+						"w": 36,
+						"h": 43
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 1
+					}
+				},
+				{
+					"filename": "bulletNormal.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 32,
+						"h": 32
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 32,
+						"h": 32
+					},
+					"frame": {
+						"x": 133,
+						"y": 91,
+						"w": 32,
+						"h": 32
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				},
+				{
+					"filename": "bulletSmall.png",
+					"rotated": false,
+					"trimmed": false,
+					"sourceSize": {
+						"w": 21,
+						"h": 21
+					},
+					"spriteSourceSize": {
+						"x": 0,
+						"y": 0,
+						"w": 21,
+						"h": 21
+					},
+					"frame": {
+						"x": 78,
+						"y": 101,
+						"w": 21,
+						"h": 21
+					},
+					"anchor": {
+						"x": 0.5,
+						"y": 0.5
+					}
+				}
+			]
+		}
+	],
+	"meta": {
+		"app": "https://www.codeandweb.com/texturepacker",
+		"version": "3.0",
+		"smartupdate": "$TexturePacker:SmartUpdate:72f7bcbf9becf2232bf843d99a241abc:4bd9af3c26ad54aae890d640d8c9a5c6:ae7f81ec16473473f7132549121c0a45$"
+	}
+}

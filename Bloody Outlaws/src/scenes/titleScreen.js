@@ -113,10 +113,6 @@ class titleScreen extends Phaser.Scene {
 
 		this.blinkText();
 
-		// this.input.on('pointerdown', function (pointer) {
-		// 	enterPressed();
-		// }, this);
-
 	}
 
 	enterPressed() {

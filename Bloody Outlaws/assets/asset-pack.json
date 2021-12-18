@@ -2,6 +2,18 @@
     "section1": {
         "files": [
             {
+                "type": "multiatlas",
+                "url": "assets/images/atlas/atlas-enemy.json",
+                "path": "assets/images/atlas",
+                "key": "atlas-enemy"
+            },
+            {
+                "type": "multiatlas",
+                "url": "assets/images/atlas/atlas-environment.json",
+                "path": "assets/images/atlas",
+                "key": "atlas-environment"
+            },
+            {
                 "url": "assets/images/backgrounds/background.png",
                 "type": "image",
                 "key": "background"

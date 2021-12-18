@@ -55,86 +55,152 @@
             "height": 720
         },
         {
-            "type": "Layer",
+            "type": "Container",
+            "id": "2108d5da-71cf-4403-a579-658c10f2bb2c",
+            "label": "environment",
+            "scope": "CLASS",
+            "components": [],
+            "x": 1584,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "21734ecd-266b-47df-98d8-6f22503db1c6",
+                    "label": "building1_png",
+                    "components": [],
+                    "texture": {
+                        "key": "atlas-environment",
+                        "frame": "building1.png"
+                    },
+                    "x": -96,
+                    "y": 440,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originY": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "f1dae8c7-fc42-4ca6-8ef9-2d4e8d3cca97",
+                    "label": "building2_png",
+                    "components": [],
+                    "texture": {
+                        "key": "atlas-environment",
+                        "frame": "building2.png"
+                    },
+                    "x": 296,
+                    "y": 440,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originY": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "56fc9ab0-b338-4bf9-8ddd-88e3d2f5f383",
+                    "label": "building3_png",
+                    "components": [],
+                    "texture": {
+                        "key": "atlas-environment",
+                        "frame": "building3.png"
+                    },
+                    "x": 680,
+                    "y": 440,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originY": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "2b0714ea-d779-4ece-98e6-b749dd08496f",
+                    "label": "building4_png",
+                    "components": [],
+                    "texture": {
+                        "key": "atlas-environment",
+                        "frame": "building4.png"
+                    },
+                    "x": 968,
+                    "y": 440,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originY": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "0d7759b3-5fc3-47e5-800a-9f99bc0adc9f",
+                    "label": "building5_png",
+                    "components": [],
+                    "texture": {
+                        "key": "atlas-environment",
+                        "frame": "building5.png"
+                    },
+                    "x": 1280,
+                    "y": 440,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originY": 1
+                }
+            ]
+        },
+        {
+            "type": "Container",
             "id": "baf7b90a-c4fc-4b9c-87de-66b5dd6b7e80",
             "label": "enemyLayer",
             "scope": "CLASS",
             "components": [],
+            "x": 680,
+            "y": 520,
             "list": [
                 {
-                    "type": "Ellipse",
-                    "id": "a605cbd2-b13d-4181-a1dd-8209144270ab",
-                    "label": "barfly",
-                    "scope": "CLASS",
-                    "components": [
-                        "PushOnClick"
-                    ],
-                    "x": 336,
-                    "y": 504,
-                    "angle": -90,
-                    "originX": 0.045,
-                    "isFilled": true,
-                    "fillColor": "#3f86bd",
-                    "lineWidth": 4,
-                    "isStroked": true,
-                    "width": 128,
-                    "height": 128,
-                    "smoothness": 9
-                },
-                {
-                    "type": "Ellipse",
-                    "id": "2c834d77-1faa-46c2-8a56-78ee4ecb08a8",
-                    "label": "bouncer",
-                    "scope": "CLASS",
-                    "components": [
-                        "PushOnClick"
-                    ],
-                    "x": 432,
-                    "y": 472,
-                    "angle": -90,
-                    "originX": 0.045,
-                    "isFilled": true,
-                    "fillColor": "#cdd730",
-                    "lineWidth": 4,
-                    "isStroked": true,
-                    "width": 128,
-                    "height": 128,
-                    "smoothness": 9
-                },
-                {
-                    "type": "Ellipse",
+                    "type": "Sprite",
                     "id": "98623aca-b54a-4513-845c-737318a5a8f4",
                     "label": "dust",
                     "scope": "CLASS",
                     "components": [
                         "PushOnClick"
                     ],
-                    "x": 584,
-                    "y": 504,
-                    "angle": -90,
-                    "originX": 0.045,
-                    "isFilled": true,
-                    "fillColor": "#6b2f2f",
-                    "lineWidth": 4,
-                    "isStroked": true,
-                    "width": 128,
-                    "height": 128,
-                    "smoothness": 9
+                    "texture": {
+                        "key": "atlas-enemy",
+                        "frame": "dust1.png"
+                    },
+                    "x": 124.41930348109281,
+                    "y": 0.04628138898311818,
+                    "scaleX": 3,
+                    "scaleY": 3,
+                    "originY": 1
                 },
                 {
-                    "prefabId": "3ecefe03-d80d-4a2a-ad88-b54571ed7ab2",
-                    "id": "cdd4fc0f-3e6a-44b6-9e8f-eabb6cc019c1",
-                    "unlock": [
-                        "x",
-                        "y"
-                    ],
-                    "label": "enemy",
+                    "type": "Sprite",
+                    "id": "2c834d77-1faa-46c2-8a56-78ee4ecb08a8",
+                    "label": "bouncer",
                     "scope": "CLASS",
                     "components": [
                         "PushOnClick"
                     ],
-                    "x": 864,
-                    "y": 503.3998027255992
+                    "texture": {
+                        "key": "atlas-enemy",
+                        "frame": "bouncer1.png"
+                    },
+                    "x": -3.580696518907189,
+                    "y": 0.04628138898311818,
+                    "scaleX": 3,
+                    "scaleY": 3,
+                    "originY": 1
+                },
+                {
+                    "type": "Sprite",
+                    "id": "a605cbd2-b13d-4181-a1dd-8209144270ab",
+                    "label": "barfly",
+                    "scope": "CLASS",
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "atlas-enemy",
+                        "frame": "barfly1.png"
+                    },
+                    "x": -139.5806965189072,
+                    "y": 0.04628138898311818,
+                    "scaleX": 3,
+                    "scaleY": 3,
+                    "originY": 1
                 }
             ]
         },
