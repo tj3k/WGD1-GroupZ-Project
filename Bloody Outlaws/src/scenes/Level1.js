@@ -357,12 +357,14 @@ class Level1 extends Phaser.Scene {
 				this.cameras.main.shake(250, 0.004);
 				this.cameras.main.flash(50, 150, 150, 150);
 				this.ammo--;
+				this.score = this.score + 50;
 			}
 
 			// Shakes/flashes the screen different when out of ammo.
 			else if (pointer.leftButtonDown() && this.ammo <= 0)
 			{
 				this.ammo = 0;
+				this.score === this.score;
 				this.reloadIndicator.setVisible(true);
 				this.cameras.main.shake(50, 0.001);
 				this.cameras.main.flash(25, 150, 150, 25);
