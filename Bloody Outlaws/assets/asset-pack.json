@@ -19,6 +19,11 @@
                 "key": "background"
             },
             {
+                "url": "assets/images/backgrounds/buildings-tileSprite.png",
+                "type": "image",
+                "key": "buildings-tileSprite"
+            },
+            {
                 "url": "assets/images/enemy/bullets/bulletBig.png",
                 "type": "image",
                 "key": "bulletBig"

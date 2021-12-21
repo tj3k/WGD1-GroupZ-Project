@@ -1,89 +1,57 @@
 
 // You can write more code here
 
-class bullet extends Phaser.GameObjects.Sprite {
-	constructor(scene, frame)
-	{
-		super(scene, 0, 0, 'Enemy Bullet', frame);
+/** TODO:
+ * Attempt at importing classes.
+ * Clashing with scene class.
+ */
 
-		this.visible = false;
-	}
-}
+// import {Enemy} from "../classes/enemy";
+// import {Bullet} from "../classes/bullet";
 
-class enemy extends Phaser.GameObjects.Sprite {
-	constructor(scene, name, x, y)
-	{
-		super(scene, x, y);
+// import bullet from "../classes/bullet"
+// import enemy from "../classes/enemy"
+//
+// class barfly extends enemy
+// {
+// 	constructor(scene, x, y)
+// 	{
+// 		super(scene, 'barfly', 6, 4, x, y);
+//
+// 		this.bullet = new Bullet(scene, 'bulletNormal');
+//
+// 		scene.add.existing(this.bullet);
+// 	}
+//
+// }
+//
+// class bouncer extends enemy
+// {
+// 	constructor(scene, x, y)
+// 	{
+// 		super(scene, 'bouncer', 8, 4, x, y);
+//
+// 		this.bullet = new Bullet(scene, 'bulletBig');
+//
+// 		scene.add.existing(this.bullet);
+// 	}
+//
+// }
+//
+// class dust extends enemy
+// {
+// 	constructor(scene, x, y)
+// 	{
+// 		super(scene, 'dust', 4, 4, x, y);
+//
+// 		this.bullet = new Bullet(scene, 'bulletSmall');
+//
+// 		scene.add.existing(this.bullet);
+// 	}
+//
+// }
 
-		this.name = name;
 
-		this.setPosition(x, y);
-
-		this.play(this.name + '-idle');
-
-		scene.add.existing(this);
-
-		this.on('animationcomplete', this.animComplete, this);
-
-		this.alive = true;
-
-		this.hp = hp;
-
-		this.timer = scene.time.addEvent({delay: Phaser.Math.Between(1000, 3000), callback: this.fire, callbackScope: this});
-	}
-
-	preUpdate (time, delta)
-	{
-		super.preUpdate(time, delta);
-	}
-
-	animComplete (animation)
-	{
-		if (animation.key === this.name + '-attack')
-		{
-			this.play(this.name + '-idle');
-		}
-	}
-
-	damage (amount)
-	{
-		if (this.hp == 0)
-		{
-			this.alive = false;
-
-			this.destroy(true);
-		}
-	}
-
-	fire ()
-	{
-
-		if (this.isAlive === true)
-		{
-			this.play(this.name + '-attack');
-
-			// var offset = (this.name === 'blue') ? 20 : -20;
-			// var targetX = (this.name === 'blue') ? target.x + 30 : target.x - 30;
-
-			this.bullet.setPosition(this.x + offset, this.y + 20).setVisible(true);
-
-			this.scene.tweens.add({
-				targets: this.bullet,
-				scaleX: "*=1.50",
-				scaleY: "*=1.50",
-				ease: 'Expo.easeIn',
-				duration: 1000,
-				onComplete: function (tween, targets) {
-					targets[0].setVisible(false);
-				}
-			});
-
-			this.health(Phaser.Math.Between(2, 8));
-
-			this.timer = this.scene.time.addEvent({ delay: Phaser.Math.Between(1000, 3000), callback: this.fire, callbackScope: this });
-		}
-	}
-}
 
 /* START OF COMPILED CODE */
 
@@ -107,9 +75,6 @@ class Level1 extends Phaser.Scene {
 
 		this.score = 0;
 
-		// Enemy Variables
-
-
 		/* END-USER-CTR-CODE */
 	}
 
@@ -125,8 +90,12 @@ class Level1 extends Phaser.Scene {
 		// foreground
 		const foreground = this.add.tileSprite(640, 360, 1280, 720, "foreground");
 
+		// buildings
+		const buildings = this.add.tileSprite(184, 248, 2238, 404, "buildings-tileSprite");
+
 		// environment
 		const environment = this.add.container(1584, 0);
+		environment.visible = false;
 
 		// building1_png
 		const building1_png = this.add.image(-96, 440, "atlas-environment", "building1.png");
@@ -136,56 +105,56 @@ class Level1 extends Phaser.Scene {
 		environment.add(building1_png);
 
 		// building2_png
-		const building2_png = this.add.image(296, 440, "atlas-environment", "building2.png");
+		const building2_png = this.add.image(424, 440, "atlas-environment", "building2.png");
 		building2_png.scaleX = 2;
 		building2_png.scaleY = 2;
 		building2_png.setOrigin(0.5, 1);
 		environment.add(building2_png);
 
 		// building3_png
-		const building3_png = this.add.image(680, 440, "atlas-environment", "building3.png");
+		const building3_png = this.add.image(928, 440, "atlas-environment", "building3.png");
 		building3_png.scaleX = 2;
 		building3_png.scaleY = 2;
 		building3_png.setOrigin(0.5, 1);
 		environment.add(building3_png);
 
 		// building4_png
-		const building4_png = this.add.image(968, 440, "atlas-environment", "building4.png");
+		const building4_png = this.add.image(1264, 440, "atlas-environment", "building4.png");
 		building4_png.scaleX = 2;
 		building4_png.scaleY = 2;
 		building4_png.setOrigin(0.5, 1);
 		environment.add(building4_png);
 
 		// building5_png
-		const building5_png = this.add.image(1280, 440, "atlas-environment", "building5.png");
+		const building5_png = this.add.image(1672, 440, "atlas-environment", "building5.png");
 		building5_png.scaleX = 2;
 		building5_png.scaleY = 2;
 		building5_png.setOrigin(0.5, 1);
 		environment.add(building5_png);
 
 		// enemyLayer
-		const enemyLayer = this.add.container(680, 520);
+		const enemyLayer = this.add.container(688, 520);
 
-		// dust
-		const dust = this.add.sprite(124.41930348109281, 0.04628138898311818, "atlas-enemy", "dust1.png");
-		dust.scaleX = 3;
-		dust.scaleY = 3;
-		dust.setOrigin(0.5, 1);
-		enemyLayer.add(dust);
+		// e_dust
+		const e_dust = this.add.sprite(144, 0, "atlas-enemy", "dust1.png");
+		e_dust.scaleX = 3;
+		e_dust.scaleY = 3;
+		e_dust.setOrigin(0.5, 1);
+		enemyLayer.add(e_dust);
 
-		// bouncer
-		const bouncer = this.add.sprite(-3.580696518907189, 0.04628138898311818, "atlas-enemy", "bouncer1.png");
-		bouncer.scaleX = 3;
-		bouncer.scaleY = 3;
-		bouncer.setOrigin(0.5, 1);
-		enemyLayer.add(bouncer);
+		// e_bouncer
+		const e_bouncer = this.add.sprite(-48, 0, "atlas-enemy", "bouncer1.png");
+		e_bouncer.scaleX = 3;
+		e_bouncer.scaleY = 3;
+		e_bouncer.setOrigin(0.5, 1);
+		enemyLayer.add(e_bouncer);
 
-		// barfly
-		const barfly = this.add.sprite(-139.5806965189072, 0.04628138898311818, "atlas-enemy", "barfly1.png");
-		barfly.scaleX = 3;
-		barfly.scaleY = 3;
-		barfly.setOrigin(0.5, 1);
-		enemyLayer.add(barfly);
+		// e_barfly
+		const e_barfly = this.add.sprite(-240, 0, "atlas-enemy", "barfly1.png");
+		e_barfly.scaleX = 3;
+		e_barfly.scaleY = 3;
+		e_barfly.setOrigin(0.5, 1);
+		enemyLayer.add(e_barfly);
 
 		// gameUI
 		const gameUI = this.add.layer();
@@ -266,33 +235,30 @@ class Level1 extends Phaser.Scene {
 		reloadIndicator.text = "RELOAD!!!";
 		reloadIndicator.fontSize = 80;
 
-		// lists
-		const enemies = [barfly, bouncer, dust]
+		// e_dust (components)
+		new PushOnClick(e_dust);
 
-		// dust (components)
-		new PushOnClick(dust);
+		// e_bouncer (components)
+		new PushOnClick(e_bouncer);
 
-		// bouncer (components)
-		new PushOnClick(bouncer);
-
-		// barfly (components)
-		new PushOnClick(barfly);
+		// e_barfly (components)
+		new PushOnClick(e_barfly);
 
 		this.background = background;
 		this.middle = middle;
 		this.foreground = foreground;
+		this.buildings = buildings;
 		this.environment = environment;
 		this.enemyLayer = enemyLayer;
-		this.dust = dust;
-		this.bouncer = bouncer;
-		this.barfly = barfly;
+		this.e_dust = e_dust;
+		this.e_bouncer = e_bouncer;
+		this.e_barfly = e_barfly;
 		this.gameUI = gameUI;
 		this.cursor = cursor;
 		this.healthCounter = healthCounter;
 		this.ammoCounter = ammoCounter;
 		this.scoreCounter = scoreCounter;
 		this.reloadIndicator = reloadIndicator;
-		this.enemies = enemies;
 
 		this.events.emit("scene-awake");
 	}
@@ -303,16 +269,18 @@ class Level1 extends Phaser.Scene {
 	middle;
 	/** @type {Phaser.GameObjects.TileSprite} */
 	foreground;
+	/** @type {Phaser.GameObjects.TileSprite} */
+	buildings;
 	/** @type {Phaser.GameObjects.Container} */
 	environment;
 	/** @type {Phaser.GameObjects.Container} */
 	enemyLayer;
 	/** @type {Phaser.GameObjects.Sprite} */
-	dust;
+	e_dust;
 	/** @type {Phaser.GameObjects.Sprite} */
-	bouncer;
+	e_bouncer;
 	/** @type {Phaser.GameObjects.Sprite} */
-	barfly;
+	e_barfly;
 	/** @type {Phaser.GameObjects.Layer} */
 	gameUI;
 	/** @type {Phaser.GameObjects.Sprite} */
@@ -325,30 +293,57 @@ class Level1 extends Phaser.Scene {
 	scoreCounter;
 	/** @type {Phaser.GameObjects.BitmapText} */
 	reloadIndicator;
-	/** @type {Phaser.GameObjects.Sprite[]} */
-	enemies;
 
 	/* START-USER-CODE */
 
 	// Write your code here
 
-	// private enemyArray: {health: number, sprite: Phaser.GameObjects.TileSprite }[] =
+	enemies = [];
 
 	create()
 	{
 
+
 		this.editorCreate();
 
+		// const e_barfly = new enemy(this,'barfly',450,500)
+		// this.add.existing(this.enemies)
+
+		// this.enemies = this.physics.add.group();
+
 		// Making enemies interactive so you get feedback from shooting them exclusively.
-		this.barfly.setInteractive();
-		this.bouncer.setInteractive();
-		this.dust.setInteractive();
+		this.e_barfly.setInteractive();
+		this.e_bouncer.setInteractive();
+		this.e_dust.setInteractive();
+
+
+		/** TODO:
+		 * Attempting to spawn new enemy/barfly.
+		 * I should make enemy class easier so I shouldn't have to use and extension of it and still use the correct sprites.
+		 * This is where the game crashes. Simply comment the line out for the game to load normally.
+		 */
+		// this.enemies.push(new barfly(this, 1000, 500));
+
+		// this.enemies.push(new Enemy(this, 'barfly', 6, 4, 1000, 500));
+
+		let barfly = new Enemy(this, 'barfly', 6, 4, 700,200);
+
+		// this.barfly.once('destroy', function (pointer)
+		// {
+		// 	this.reloadIndicator.setVisible(true);
+		// }, this);
+
+		// this.barfly.on('pointerdown', function (pointer)
+		// {
+		// 	this.destroy();
+		// }, this);
+
 
 		/*
 		Check if ammo is empty or full, displays text saying "RELOAD!!!" if you're empty.
 		Otherwise, triggers a shake and flash effect, indicating you shot.
 		*/
-		this.input.on('pointerdown', function (pointer) {
+		this.input.on('pointerdown', function (pointer, gameObject) {
 
 			// Shoots gun, shaking the screen and flashing to show feedback
 			if (pointer.leftButtonDown() && this.ammo > 0)
@@ -357,7 +352,8 @@ class Level1 extends Phaser.Scene {
 				this.cameras.main.shake(250, 0.004);
 				this.cameras.main.flash(50, 150, 150, 150);
 				this.ammo--;
-				this.score = this.score + 50;
+				// this.barfly.destroy();
+				// this.score = this.score + 50;
 			}
 
 			// Shakes/flashes the screen different when out of ammo.
@@ -397,8 +393,9 @@ class Level1 extends Phaser.Scene {
 		// Parallax Scrolling on the background (for now, just moving to the left slowly).
 		this.middle.tilePositionX += 0.1;
 		this.foreground.tilePositionX += 0.5;
+		this.buildings.tilePositionX += 0.7;
 
-		this.environment.x -= 0.7;
+		// this.environment.x -= 0.7;
 
 		// Check if ammo is empty, makes reload warning visible on screen.
 		if(this.ammo <= 0)

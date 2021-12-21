@@ -1,6 +1,7 @@
 
 // You can write more code here
 
+
 /* START OF COMPILED CODE */
 
 class Preload extends Phaser.Scene {

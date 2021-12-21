@@ -55,12 +55,27 @@
             "height": 720
         },
         {
+            "type": "TileSprite",
+            "id": "5d03ec52-8f30-4fe8-8210-4dd0d5b30da7",
+            "label": "buildings",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "buildings-tileSprite"
+            },
+            "x": 184,
+            "y": 248,
+            "width": 2238,
+            "height": 404
+        },
+        {
             "type": "Container",
             "id": "2108d5da-71cf-4403-a579-658c10f2bb2c",
             "label": "environment",
             "scope": "CLASS",
             "components": [],
             "x": 1584,
+            "visible": false,
             "list": [
                 {
                     "type": "Image",
@@ -86,7 +101,7 @@
                         "key": "atlas-environment",
                         "frame": "building2.png"
                     },
-                    "x": 296,
+                    "x": 424,
                     "y": 440,
                     "scaleX": 2,
                     "scaleY": 2,
@@ -101,7 +116,7 @@
                         "key": "atlas-environment",
                         "frame": "building3.png"
                     },
-                    "x": 680,
+                    "x": 928,
                     "y": 440,
                     "scaleX": 2,
                     "scaleY": 2,
@@ -116,7 +131,7 @@
                         "key": "atlas-environment",
                         "frame": "building4.png"
                     },
-                    "x": 968,
+                    "x": 1264,
                     "y": 440,
                     "scaleX": 2,
                     "scaleY": 2,
@@ -131,7 +146,7 @@
                         "key": "atlas-environment",
                         "frame": "building5.png"
                     },
-                    "x": 1280,
+                    "x": 1672,
                     "y": 440,
                     "scaleX": 2,
                     "scaleY": 2,
@@ -145,13 +160,13 @@
             "label": "enemyLayer",
             "scope": "CLASS",
             "components": [],
-            "x": 680,
+            "x": 688,
             "y": 520,
             "list": [
                 {
                     "type": "Sprite",
                     "id": "98623aca-b54a-4513-845c-737318a5a8f4",
-                    "label": "dust",
+                    "label": "e_dust",
                     "scope": "CLASS",
                     "components": [
                         "PushOnClick"
@@ -160,8 +175,7 @@
                         "key": "atlas-enemy",
                         "frame": "dust1.png"
                     },
-                    "x": 124.41930348109281,
-                    "y": 0.04628138898311818,
+                    "x": 144,
                     "scaleX": 3,
                     "scaleY": 3,
                     "originY": 1
@@ -169,7 +183,7 @@
                 {
                     "type": "Sprite",
                     "id": "2c834d77-1faa-46c2-8a56-78ee4ecb08a8",
-                    "label": "bouncer",
+                    "label": "e_bouncer",
                     "scope": "CLASS",
                     "components": [
                         "PushOnClick"
@@ -178,8 +192,7 @@
                         "key": "atlas-enemy",
                         "frame": "bouncer1.png"
                     },
-                    "x": -3.580696518907189,
-                    "y": 0.04628138898311818,
+                    "x": -48,
                     "scaleX": 3,
                     "scaleY": 3,
                     "originY": 1
@@ -187,7 +200,7 @@
                 {
                     "type": "Sprite",
                     "id": "a605cbd2-b13d-4181-a1dd-8209144270ab",
-                    "label": "barfly",
+                    "label": "e_barfly",
                     "scope": "CLASS",
                     "components": [
                         "PushOnClick"
@@ -196,8 +209,7 @@
                         "key": "atlas-enemy",
                         "frame": "barfly1.png"
                     },
-                    "x": -139.5806965189072,
-                    "y": 0.04628138898311818,
+                    "x": -240,
                     "scaleX": 3,
                     "scaleY": 3,
                     "originY": 1
@@ -366,16 +378,5 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 2
-    },
-    "lists": [
-        {
-            "id": "a18b545f-ac1e-4e5f-ad89-32d0004f36ed",
-            "label": "enemies",
-            "objectIds": [
-                "a605cbd2-b13d-4181-a1dd-8209144270ab",
-                "2c834d77-1faa-46c2-8a56-78ee4ecb08a8",
-                "98623aca-b54a-4513-845c-737318a5a8f4"
-            ]
-        }
-    ]
+    }
 }

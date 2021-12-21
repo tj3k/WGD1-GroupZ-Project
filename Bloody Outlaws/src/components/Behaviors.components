@@ -15,7 +15,7 @@
         {
             "name": "Enemy",
             "baseClass": "UserComponent",
-            "gameObjectType": "Phaser.GameObjects.Sprite",
+            "gameObjectType": "Phaser.GameObjects.Image",
             "properties": [
                 {
                     "name": "name",
@@ -32,7 +32,7 @@
                     "label": "health",
                     "tooltip": "Total Health",
                     "defValue": 6,
-                    "customDefinition": false,
+                    "customDefinition": true,
                     "type": {
                         "id": "number"
                     }
@@ -42,12 +42,28 @@
                     "label": "Strength",
                     "tooltip": "How much damage they can inflict on player",
                     "defValue": 3,
-                    "customDefinition": false,
+                    "customDefinition": true,
                     "type": {
                         "id": "number"
                     }
+                },
+                {
+                    "name": "isAlive",
+                    "label": "Is Alive",
+                    "tooltip": "Alive Status",
+                    "defValue": true,
+                    "customDefinition": true,
+                    "type": {
+                        "id": "boolean"
+                    }
                 }
             ]
+        },
+        {
+            "name": "Bullet",
+            "baseClass": "",
+            "gameObjectType": "Phaser.GameObjects.Image",
+            "properties": []
         }
     ],
     "meta": {
