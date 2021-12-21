@@ -4,54 +4,10 @@
 /** TODO:
  * Attempt at importing classes.
  * Clashing with scene class.
+ * Generally not working anywhere.
  */
 
 // import {Enemy} from "../classes/enemy";
-// import {Bullet} from "../classes/bullet";
-
-// import bullet from "../classes/bullet"
-// import enemy from "../classes/enemy"
-//
-// class barfly extends enemy
-// {
-// 	constructor(scene, x, y)
-// 	{
-// 		super(scene, 'barfly', 6, 4, x, y);
-//
-// 		this.bullet = new Bullet(scene, 'bulletNormal');
-//
-// 		scene.add.existing(this.bullet);
-// 	}
-//
-// }
-//
-// class bouncer extends enemy
-// {
-// 	constructor(scene, x, y)
-// 	{
-// 		super(scene, 'bouncer', 8, 4, x, y);
-//
-// 		this.bullet = new Bullet(scene, 'bulletBig');
-//
-// 		scene.add.existing(this.bullet);
-// 	}
-//
-// }
-//
-// class dust extends enemy
-// {
-// 	constructor(scene, x, y)
-// 	{
-// 		super(scene, 'dust', 4, 4, x, y);
-//
-// 		this.bullet = new Bullet(scene, 'bulletSmall');
-//
-// 		scene.add.existing(this.bullet);
-// 	}
-//
-// }
-
-
 
 /* START OF COMPILED CODE */
 
@@ -74,6 +30,15 @@ class Level1 extends Phaser.Scene {
 		this.isHurt = false;
 
 		this.score = 0;
+
+		// Enemy Variable
+		this.lastSpawned = 2000;
+
+		this.barflyHP = 2;
+		this.dustHP = 1;
+		this.bouncerHP = 4;
+
+		// this.spawnTimer = scene.time.addEvent({delay: Phaser.Math.Between(1000, 3000), callback: this.spawnEnemy, callbackScope: this});
 
 		/* END-USER-CTR-CODE */
 	}
@@ -133,28 +98,28 @@ class Level1 extends Phaser.Scene {
 		environment.add(building5_png);
 
 		// enemyLayer
-		const enemyLayer = this.add.container(688, 520);
+		const enemyLayer = this.add.container(11.867828044274347, 544);
 
-		// e_dust
-		const e_dust = this.add.sprite(144, 0, "atlas-enemy", "dust1.png");
-		e_dust.scaleX = 3;
-		e_dust.scaleY = 3;
-		e_dust.setOrigin(0.5, 1);
-		enemyLayer.add(e_dust);
+		// dust
+		const dust = this.add.sprite(1596, 0, "atlas-enemy", "dust1.png");
+		dust.scaleX = 3;
+		dust.scaleY = 3;
+		dust.setOrigin(0.5, 1);
+		enemyLayer.add(dust);
 
-		// e_bouncer
-		const e_bouncer = this.add.sprite(-48, 0, "atlas-enemy", "bouncer1.png");
-		e_bouncer.scaleX = 3;
-		e_bouncer.scaleY = 3;
-		e_bouncer.setOrigin(0.5, 1);
-		enemyLayer.add(e_bouncer);
+		// bouncer
+		const bouncer = this.add.sprite(1540, 0, "atlas-enemy", "bouncer1.png");
+		bouncer.scaleX = 3;
+		bouncer.scaleY = 3;
+		bouncer.setOrigin(0.5, 1);
+		enemyLayer.add(bouncer);
 
-		// e_barfly
-		const e_barfly = this.add.sprite(-240, 0, "atlas-enemy", "barfly1.png");
-		e_barfly.scaleX = 3;
-		e_barfly.scaleY = 3;
-		e_barfly.setOrigin(0.5, 1);
-		enemyLayer.add(e_barfly);
+		// barfly
+		const barfly = this.add.sprite(1372, 0, "atlas-enemy", "barfly1.png");
+		barfly.scaleX = 3;
+		barfly.scaleY = 3;
+		barfly.setOrigin(0.5, 1);
+		enemyLayer.add(barfly);
 
 		// gameUI
 		const gameUI = this.add.layer();
@@ -235,14 +200,14 @@ class Level1 extends Phaser.Scene {
 		reloadIndicator.text = "RELOAD!!!";
 		reloadIndicator.fontSize = 80;
 
-		// e_dust (components)
-		new PushOnClick(e_dust);
+		// dust (components)
+		new PushOnClick(dust);
 
-		// e_bouncer (components)
-		new PushOnClick(e_bouncer);
+		// bouncer (components)
+		new PushOnClick(bouncer);
 
-		// e_barfly (components)
-		new PushOnClick(e_barfly);
+		// barfly (components)
+		new PushOnClick(barfly);
 
 		this.background = background;
 		this.middle = middle;
@@ -250,9 +215,9 @@ class Level1 extends Phaser.Scene {
 		this.buildings = buildings;
 		this.environment = environment;
 		this.enemyLayer = enemyLayer;
-		this.e_dust = e_dust;
-		this.e_bouncer = e_bouncer;
-		this.e_barfly = e_barfly;
+		this.dust = dust;
+		this.bouncer = bouncer;
+		this.barfly = barfly;
 		this.gameUI = gameUI;
 		this.cursor = cursor;
 		this.healthCounter = healthCounter;
@@ -276,11 +241,11 @@ class Level1 extends Phaser.Scene {
 	/** @type {Phaser.GameObjects.Container} */
 	enemyLayer;
 	/** @type {Phaser.GameObjects.Sprite} */
-	e_dust;
+	dust;
 	/** @type {Phaser.GameObjects.Sprite} */
-	e_bouncer;
+	bouncer;
 	/** @type {Phaser.GameObjects.Sprite} */
-	e_barfly;
+	barfly;
 	/** @type {Phaser.GameObjects.Layer} */
 	gameUI;
 	/** @type {Phaser.GameObjects.Sprite} */
@@ -298,23 +263,52 @@ class Level1 extends Phaser.Scene {
 
 	// Write your code here
 
-	enemies = [];
-
 	create()
 	{
-
 
 		this.editorCreate();
 
 		// const e_barfly = new enemy(this,'barfly',450,500)
 		// this.add.existing(this.enemies)
 
-		// this.enemies = this.physics.add.group();
+		// this.enemies = this.physics.add.group({
+		// 	classType: Enemy,
+		// 	maxSize: 3,
+		// 	runChildUpdate: true
+		// });
+
+		// if (this.spawnTimer = 0)
+		// {
+		// 	let barfly = this.add.sprite(-240, 0, "atlas-enemy", "barfly1.png").setInteractive();
+		// }
 
 		// Making enemies interactive so you get feedback from shooting them exclusively.
-		this.e_barfly.setInteractive();
-		this.e_bouncer.setInteractive();
-		this.e_dust.setInteractive();
+		this.barfly.setInteractive();
+		this.bouncer.setInteractive();
+		this.dust.setInteractive();
+
+		// this.en_barfly = this.add.sprite(1300,500, "atlas-enemy", "barfly1.png");
+		// this.en_bouncer = this.add.sprite(1400, 500, "atlas-enemy", "bouncer1.png");
+		// this.en_dust = this.add.sprite(1350, 500, "atlas-enemy", "dust1.png");
+		//
+		// this.en_barfly.setScale(3).setInteractive();
+		// this.en_bouncer.setScale(3).setInteractive()
+		// this.en_dust.setScale(3).setInteractive()
+
+		this.input.on('gameobjectdown', this.hurtEnemy, this);
+
+		this.enemies = this.physics.add.group();
+
+		var maxEnemies = 20;
+		for (var i = 0; i <= maxEnemies; i++)
+		{
+			var pbarfly = this.physics.add.sprite(0, 0, "atlas-enemy", "barfly1.png").setScale(3).setInteractive().setOrigin(0.5, 1);
+			this.enemies.add(pbarfly);
+			var pbouncer = this.physics.add.sprite(0, 0, "atlas-enemy", "bouncer1.png").setScale(3).setInteractive().setOrigin(0.5, 1);
+			this.enemies.add(pbouncer);
+			var pdust = this.physics.add.sprite(0, 0, "atlas-enemy", "dust1.png").setScale(3).setInteractive().setOrigin(0.5, 1);
+			this.enemies.add(pdust);
+		}
 
 
 		/** TODO:
@@ -326,7 +320,7 @@ class Level1 extends Phaser.Scene {
 
 		// this.enemies.push(new Enemy(this, 'barfly', 6, 4, 1000, 500));
 
-		let barfly = new Enemy(this, 'barfly', 6, 4, 700,200);
+		// let barfly = new Enemy(this, 'barfly', 6, 4, 700,200);
 
 		// this.barfly.once('destroy', function (pointer)
 		// {
@@ -351,7 +345,6 @@ class Level1 extends Phaser.Scene {
 				this.reloadIndicator.setVisible(false);
 				this.cameras.main.shake(250, 0.004);
 				this.cameras.main.flash(50, 150, 150, 150);
-				this.ammo--;
 				// this.barfly.destroy();
 				// this.score = this.score + 50;
 			}
@@ -380,12 +373,169 @@ class Level1 extends Phaser.Scene {
 
 		}, this);
 
-		// Spawns enemies random from the right?
-
-
-		// Shoot at enemy to damage them.
-
 	}
+
+	// timedEvent = this.time.addEvent({ delay: 3000, callback: hurtPlayer, callbackScope: this, loop: true });
+
+	// Checks gameObject for what kind and then tries to spawn a new sprite of the same name.
+	spawnEnemy(gameObject)
+	{
+		if (gameObject == this.barfly)
+		{
+			const barfly = this.add.sprite(1372, 0, "atlas-enemy", "barfly1.png");
+			barfly.scaleX = 3;
+			barfly.scaleY = 3;
+			barfly.setOrigin(0.5, 1);
+			this.enemyLayer.add(gameObject);
+			this.gameObject.setInteractive();
+		}
+		else if (gameObject == this.bouncer)
+		{
+			// bouncer
+			const bouncer = this.add.sprite(1540, 0, "atlas-enemy", "bouncer1.png");
+			bouncer.scaleX = 3;
+			bouncer.scaleY = 3;
+			bouncer.setOrigin(0.5, 1);
+			this.enemyLayer.add(gameObject);
+			this.gameObject.setInteractive();
+		}
+		else if (gameObject == this.dust)
+		{
+			const dust = this.add.sprite(1596, 0, "atlas-enemy", "dust1.png");
+			dust.scaleX = 3;
+			dust.scaleY = 3;
+			dust.setOrigin(0.5, 1);
+			this.enemyLayer.add(gameObject);
+			this.gameObject.setInteractive();
+		}
+	}
+
+	// Moves enemy to the right slowly.
+	moveEnemy(enemy, speed)
+	{
+		enemy.x -= speed;
+
+		if (enemy.x < -60)
+		{
+			this.resetEnemyPos(enemy);
+		}
+	}
+
+	// Resets enemy when they are outside the world.
+	resetEnemyPos(enemy)
+	{
+		enemy.x = 1400;
+	}
+
+	// Hurts the player
+	hurtPlayer ()
+	{
+		this.cameras.main.shake(300, 0.005);
+		this.cameras.main.flash(80, 180, 50, 50);
+		this.health = this.health - 5;
+	}
+
+
+	// Destroys enemy on click and gives player specific score based on enemy.
+	// Will also run an enemy spawner function.
+	hurtEnemy(pointer, gameObject)
+	{
+		// If Barfly had no health and you had ammo
+		if (gameObject == this.barfly && this.ammo > 0 && this.barflyHP <= 0)
+		{
+			this.reloadIndicator.setVisible(false);
+			this.cameras.main.shake(250, 0.004);
+			this.cameras.main.flash(50, 150, 150, 150);
+			this.ammo--;
+			// gameObject.destroy()
+			this.score = this.score + 25;
+			this.barflyHP = 2
+			this.resetEnemyPos(gameObject)
+		}
+		// If Barfly had health but you had no ammo
+		else if (gameObject == this.barfly && this.ammo <= 0 && this.barflyHP > 0){
+			this.ammo = 0;
+			this.score === this.score;
+			this.reloadIndicator.setVisible(true);
+			this.cameras.main.shake(50, 0.001);
+			this.cameras.main.flash(25, 150, 150, 25);
+		}
+		// If Barfly had health and you had ammo
+		else if (gameObject == this.barfly && this.ammo > 0 && this.barflyHP > 0)
+		{
+			this.reloadIndicator.setVisible(false);
+			this.cameras.main.shake(250, 0.004);
+			this.cameras.main.flash(50, 150, 150, 150);
+			this.ammo--;
+			this.barflyHP--;
+			this.score = this.score + 5;
+		}
+
+
+		// Same thing for Bouncer and dust after
+		if (gameObject == this.bouncer && this.ammo > 0 && this.bouncerHP <= 0)
+		{
+			this.reloadIndicator.setVisible(false);
+			this.cameras.main.shake(250, 0.004);
+			this.cameras.main.flash(50, 150, 150, 150);
+			this.ammo--;
+			// gameObject.destroy()
+			this.score = this.score + 50;
+			this.bouncerHP = 4
+			this.resetEnemyPos(gameObject);
+		}
+		// If bouncer had health but you had no ammo
+		else if (gameObject == this.bouncer && this.ammo <= 0 && this.bouncerHP > 0){
+			this.ammo = 0;
+			this.score === this.score;
+			this.reloadIndicator.setVisible(true);
+			this.cameras.main.shake(50, 0.001);
+			this.cameras.main.flash(25, 150, 150, 25);
+		}
+		// If bouncer had health and you had ammo
+		else if (gameObject == this.bouncer && this.ammo > 0 && this.bouncerHP > 0)
+		{
+			this.reloadIndicator.setVisible(false);
+			this.cameras.main.shake(250, 0.004);
+			this.cameras.main.flash(50, 150, 150, 150);
+			this.ammo--;
+			this.bouncerHP--;
+			this.score = this.score + 5;
+		}
+
+
+		if (gameObject == this.dust && this.ammo > 0 && this.dustHP <= 0)
+		{
+			this.reloadIndicator.setVisible(false);
+			this.cameras.main.shake(250, 0.004);
+			this.cameras.main.flash(50, 150, 150, 150);
+			this.ammo--;
+			// gameObject.destroy()
+			this.score = this.score + 10;
+			this.dustHP = 1
+			this.resetEnemyPos(gameObject);
+		}
+		// If dust had health but you had no ammo
+		else if (gameObject == this.dust && this.ammo <= 0 && this.dustHP > 0){
+			this.ammo = 0;
+			this.score === this.score;
+			this.reloadIndicator.setVisible(true);
+			this.cameras.main.shake(50, 0.001);
+			this.cameras.main.flash(25, 150, 150, 25);
+		}
+		// If dust had health and you had ammo
+		else if (gameObject == this.dust && this.ammo > 0 && this.dustHP > 0)
+		{
+			this.reloadIndicator.setVisible(false);
+			this.cameras.main.shake(250, 0.004);
+			this.cameras.main.flash(50, 150, 150, 150);
+			this.ammo--;
+			this.dustHP--;
+			this.score = this.score + 5;
+		}
+	}
+
+
 
 	update()
 	{
@@ -395,7 +545,12 @@ class Level1 extends Phaser.Scene {
 		this.foreground.tilePositionX += 0.5;
 		this.buildings.tilePositionX += 0.7;
 
-		// this.environment.x -= 0.7;
+		// Moving the enemies
+		this.moveEnemy(this.barfly, 1.2);
+		this.moveEnemy(this.bouncer, 0.8);
+		this.moveEnemy(this.dust, 2);
+
+
 
 		// Check if ammo is empty, makes reload warning visible on screen.
 		if(this.ammo <= 0)
@@ -418,6 +573,10 @@ class Level1 extends Phaser.Scene {
 		this.healthCounter.setText(['' + this.health + '/' + this.totalHealth + '']);
 		this.ammoCounter.setText(['' + this.ammo + '/' + this.totalAmmo + '']);
 		this.scoreCounter.setText(['' + this.score + '']);
+
+		// Removes the computers cursor so you don't have 2 cursors in-game.
+		let canvas = this.sys.canvas;
+		canvas.style.cursor = 'none';
 
 
 		// Makes the crosshair follow the mouses position.

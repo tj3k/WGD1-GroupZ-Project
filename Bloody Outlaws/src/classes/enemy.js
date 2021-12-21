@@ -1,9 +1,9 @@
-import {Bullet} from "./bullet";
+// import {Bullet} from "./bullet";
 
 export class Enemy extends Phaser.GameObjects.Sprite {
     constructor(scene, name, health, attack, x, y)
     {
-        super(scene);
+        super(scene, 0, 0, "enemy");
 
         this.scene = scene;
 

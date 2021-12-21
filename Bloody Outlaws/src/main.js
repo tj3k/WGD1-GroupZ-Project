@@ -5,20 +5,19 @@ window.addEventListener('load', function () {
 		width: 1280,
 		height: 720,
 		type: Phaser.AUTO,
+		parent: 'canvas-container',
 		pixelArt: true,
 		physics: {
 			default: 'arcade',
 			arcade: {
-				gravity: {
-					y: 10
-				}
+				debug: false
 			}
 		},
         backgroundColor: "#242424",
 		scale: {
 			mode: Phaser.Scale.FIT,
-			autoCenter: Phaser.Scale.CENTER_BOTH
-		}
+			autoCenter: Phaser.Scale.CENTER_HORIZONTALLY
+		},
 	});
 	
 	game.scene.add("Preload", Preload);

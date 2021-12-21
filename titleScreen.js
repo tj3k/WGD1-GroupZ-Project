@@ -152,7 +152,7 @@ class titleScreen extends Phaser.Scene {
 		this.foreground.tilePositionX += 0.5;
 
 		// Moves the Crosshair
-			this.input.on('pointermove', function (pointer)	{
+		this.input.on('pointermove', function (pointer)	{
 			this.cursor.x = pointer.x;
 			this.cursor.y = pointer.y;
 		}, this)

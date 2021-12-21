@@ -160,13 +160,13 @@
             "label": "enemyLayer",
             "scope": "CLASS",
             "components": [],
-            "x": 688,
-            "y": 520,
+            "x": 11.867828044274347,
+            "y": 544,
             "list": [
                 {
                     "type": "Sprite",
                     "id": "98623aca-b54a-4513-845c-737318a5a8f4",
-                    "label": "e_dust",
+                    "label": "dust",
                     "scope": "CLASS",
                     "components": [
                         "PushOnClick"
@@ -175,7 +175,7 @@
                         "key": "atlas-enemy",
                         "frame": "dust1.png"
                     },
-                    "x": 144,
+                    "x": 1596,
                     "scaleX": 3,
                     "scaleY": 3,
                     "originY": 1
@@ -183,7 +183,7 @@
                 {
                     "type": "Sprite",
                     "id": "2c834d77-1faa-46c2-8a56-78ee4ecb08a8",
-                    "label": "e_bouncer",
+                    "label": "bouncer",
                     "scope": "CLASS",
                     "components": [
                         "PushOnClick"
@@ -192,7 +192,7 @@
                         "key": "atlas-enemy",
                         "frame": "bouncer1.png"
                     },
-                    "x": -48,
+                    "x": 1540,
                     "scaleX": 3,
                     "scaleY": 3,
                     "originY": 1
@@ -200,7 +200,7 @@
                 {
                     "type": "Sprite",
                     "id": "a605cbd2-b13d-4181-a1dd-8209144270ab",
-                    "label": "e_barfly",
+                    "label": "barfly",
                     "scope": "CLASS",
                     "components": [
                         "PushOnClick"
@@ -209,7 +209,7 @@
                         "key": "atlas-enemy",
                         "frame": "barfly1.png"
                     },
-                    "x": -240,
+                    "x": 1372,
                     "scaleX": 3,
                     "scaleY": 3,
                     "originY": 1
