@@ -1,0 +1,62 @@
+{
+    "id": "5525733c-3ffc-469e-9fcf-0fa0d871b979",
+    "sceneType": "SCENE",
+    "settings": {
+        "snapEnabled": true,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "sceneGameOver",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "type": "Rectangle",
+            "id": "15e7e5e5-e278-4a83-a564-d5c79483d240",
+            "label": "rectangle",
+            "components": [],
+            "scaleX": 10,
+            "scaleY": 5.63,
+            "originX": 0,
+            "originY": 0,
+            "isFilled": true,
+            "fillColor": "#8e3434",
+            "width": 128,
+            "height": 128
+        },
+        {
+            "type": "BitmapText",
+            "id": "bbd2833d-4b5a-46a5-92e5-fb38f2b67cab",
+            "label": "gameOverText",
+            "components": [],
+            "x": 640,
+            "y": 320,
+            "text": "GAME OVER",
+            "font": "smallPixel7",
+            "align": 1,
+            "fontSize": 200,
+            "dropShadowY": 15
+        },
+        {
+            "type": "BitmapText",
+            "id": "b1d96fd2-887a-4584-abfe-dbe477ebf01e",
+            "label": "playAgainText",
+            "scope": "CLASS",
+            "components": [],
+            "x": 640,
+            "y": 480,
+            "text": "Click Here to Play Again",
+            "font": "smallPixel7",
+            "align": 1,
+            "fontSize": 60,
+            "dropShadowY": 15
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 2
+    }
+}

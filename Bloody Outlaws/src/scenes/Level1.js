@@ -266,6 +266,10 @@ class Level1 extends Phaser.Scene {
 	create()
 	{
 
+		this.health = this.totalHealth;
+		this.ammo = this.totalAmmo;
+		this.score = 0;
+
 		this.editorCreate();
 
 		// const e_barfly = new enemy(this,'barfly',450,500)
@@ -296,6 +300,24 @@ class Level1 extends Phaser.Scene {
 		// this.en_dust.setScale(3).setInteractive()
 
 		this.input.on('gameobjectdown', this.hurtEnemy, this);
+
+		let timedEvent = this.time.addEvent({ delay: 2500, callback: hurtPlayer, callbackScope: this, loop: true });
+
+
+		// Hurts the player
+		function hurtPlayer() {
+			this.cameras.main.shake(500, 0.005);
+			this.cameras.main.flash(250, 180, 50, 50);
+			this.health = this.health - 1;
+
+			if (this.health == 0)
+			{
+				this.isAlive = false;
+				this.health == 0;
+				this.scene.start("sceneGameOver")
+			}
+		}
+
 
 		this.enemies = this.physics.add.group();
 
@@ -426,15 +448,6 @@ class Level1 extends Phaser.Scene {
 	{
 		enemy.x = 1400;
 	}
-
-	// Hurts the player
-	hurtPlayer ()
-	{
-		this.cameras.main.shake(300, 0.005);
-		this.cameras.main.flash(80, 180, 50, 50);
-		this.health = this.health - 5;
-	}
-
 
 	// Destroys enemy on click and gives player specific score based on enemy.
 	// Will also run an enemy spawner function.

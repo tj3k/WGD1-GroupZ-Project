@@ -23,6 +23,7 @@ window.addEventListener('load', function () {
 	game.scene.add("Preload", Preload);
 	game.scene.add("titleScreen", titleScreen);
 	game.scene.add("Level1", Level1);
+	game.scene.add("sceneGameOver", sceneGameOver);
 	game.scene.add("Boot", Boot, true);
 });
 
