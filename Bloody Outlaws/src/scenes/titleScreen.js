@@ -113,6 +113,16 @@ class titleScreen extends Phaser.Scene {
 		this.input.on("pointerdown", this.enterPressed, this);
 
 		this.blinkText();
+		
+		// Once mouse clicks, runs fade in
+		this.input.on('pointerdown', () => {
+			//fade to black
+			this.cameras.main.fadeOut(3000, 0, 0, 0)
+		})
+
+		this.cameras.main.once(Phaser.Cameras.Scene2D.Events.FADE_OUT_COMPLETE, (cam, effect) => {
+			this.scene.start("Level1")
+		})
 
 	}
 
