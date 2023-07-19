@@ -14,7 +14,7 @@ by [Taylor Moon](https://github.com/TaylorMN) & [Tembani Mdaya](https://github.c
 
 [ArtStation Link](https://www.artstation.com/artwork/NGBw8J) for a behind the scenes look at art and concept art.
 
-[![Youtube Video of "Bloody Outlaws" Gameplay Demo](https://www.youtube.com/watch?v=ydFV7J7HvVM)
+[Youtube Video of "Bloody Outlaws" Gameplay Demo](https://www.youtube.com/watch?v=ydFV7J7HvVM)
 
 
 Screenshots :
