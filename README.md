@@ -13,6 +13,7 @@ Stylised in pixel-art and in widescreen.
 by [Taylor Moon](https://github.com/TaylorMN) & [Tembani Mdaya](https://github.com/tj3k)
 
 [ArtStation Link](https://www.artstation.com/artwork/NGBw8J) for a behind the scenes look at art and concept art.
+
 [![Youtube Video of "Bloody Outlaws" Gameplay Demo](https://www.youtube.com/watch?v=ydFV7J7HvVM)
 
 
