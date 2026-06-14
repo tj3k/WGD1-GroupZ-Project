@@ -1,0 +1,99 @@
+{
+    "anims": [
+        {
+            "key": "barfly-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas-enemy",
+                    "frame": "barfly1.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 1,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "barfly-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas-enemy",
+                    "frame": "barfly2.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 1,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bouncer-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas-enemy",
+                    "frame": "bouncer1.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 1,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "bouncer-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas-enemy",
+                    "frame": "bouncer2.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 1,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dust-idle",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas-enemy",
+                    "frame": "dust1.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 1,
+            "skipMissedFrames": true,
+            "repeat": -1
+        },
+        {
+            "key": "dust-attack",
+            "type": "frame",
+            "frames": [
+                {
+                    "key": "atlas-enemy",
+                    "frame": "dust2.png",
+                    "duration": 0,
+                    "keyframe": false
+                }
+            ],
+            "frameRate": 24,
+            "skipMissedFrames": true,
+            "repeat": -1
+        }
+    ],
+    "globalTimeScale": 1,
+    "meta": {
+        "app": "Phaser Editor 2D v3",
+        "contentType": "Phaser v3 Animations"
+    }
+}

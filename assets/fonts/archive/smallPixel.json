@@ -1,0 +1,15 @@
+{
+    "image": "Small Pixel",
+    "width": 50,
+    "height": 50,
+    "chars": "0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ       abcdefghijklmnopqrstuvwxyz       .:,;'!(?!)+-*/=",
+    "offset": {
+        "x": 0,
+        "y": 0
+    },
+    "spacing": {
+        "x": 0,
+        "y": 0
+    },
+    "charsPerRow": 11
+}

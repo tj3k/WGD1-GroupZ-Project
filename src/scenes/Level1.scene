@@ -1,0 +1,382 @@
+{
+    "id": "d4a4ee94-7771-481a-b176-986a26ef6c19",
+    "sceneType": "SCENE",
+    "settings": {
+        "snapEnabled": true,
+        "snapWidth": 8,
+        "snapHeight": 8,
+        "preloadPackFiles": [],
+        "createMethodName": "editorCreate",
+        "sceneKey": "Level1",
+        "borderWidth": 1280,
+        "borderHeight": 720
+    },
+    "displayList": [
+        {
+            "type": "TileSprite",
+            "id": "e12add91-774d-4233-970c-bd612e5bcdf6",
+            "label": "background",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "background"
+            },
+            "x": 640,
+            "y": 360,
+            "width": 1280,
+            "height": 720
+        },
+        {
+            "type": "TileSprite",
+            "id": "eb6d3b3b-a339-42d3-99d9-9801324420c4",
+            "label": "middle",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "middle"
+            },
+            "x": 640,
+            "y": 264,
+            "width": 1280,
+            "height": 326
+        },
+        {
+            "type": "TileSprite",
+            "id": "05342799-da2d-4917-851a-2eac5e8f19cd",
+            "label": "foreground",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "foreground"
+            },
+            "x": 640,
+            "y": 360,
+            "width": 1280,
+            "height": 720
+        },
+        {
+            "type": "TileSprite",
+            "id": "5d03ec52-8f30-4fe8-8210-4dd0d5b30da7",
+            "label": "buildings",
+            "scope": "CLASS",
+            "components": [],
+            "texture": {
+                "key": "buildings-tileSprite"
+            },
+            "x": 184,
+            "y": 248,
+            "width": 2238,
+            "height": 404
+        },
+        {
+            "type": "Container",
+            "id": "2108d5da-71cf-4403-a579-658c10f2bb2c",
+            "label": "environment",
+            "scope": "CLASS",
+            "components": [],
+            "x": 1584,
+            "visible": false,
+            "list": [
+                {
+                    "type": "Image",
+                    "id": "21734ecd-266b-47df-98d8-6f22503db1c6",
+                    "label": "building1_png",
+                    "components": [],
+                    "texture": {
+                        "key": "atlas-environment",
+                        "frame": "building1.png"
+                    },
+                    "x": -96,
+                    "y": 440,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originY": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "f1dae8c7-fc42-4ca6-8ef9-2d4e8d3cca97",
+                    "label": "building2_png",
+                    "components": [],
+                    "texture": {
+                        "key": "atlas-environment",
+                        "frame": "building2.png"
+                    },
+                    "x": 424,
+                    "y": 440,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originY": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "56fc9ab0-b338-4bf9-8ddd-88e3d2f5f383",
+                    "label": "building3_png",
+                    "components": [],
+                    "texture": {
+                        "key": "atlas-environment",
+                        "frame": "building3.png"
+                    },
+                    "x": 928,
+                    "y": 440,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originY": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "2b0714ea-d779-4ece-98e6-b749dd08496f",
+                    "label": "building4_png",
+                    "components": [],
+                    "texture": {
+                        "key": "atlas-environment",
+                        "frame": "building4.png"
+                    },
+                    "x": 1264,
+                    "y": 440,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originY": 1
+                },
+                {
+                    "type": "Image",
+                    "id": "0d7759b3-5fc3-47e5-800a-9f99bc0adc9f",
+                    "label": "building5_png",
+                    "components": [],
+                    "texture": {
+                        "key": "atlas-environment",
+                        "frame": "building5.png"
+                    },
+                    "x": 1672,
+                    "y": 440,
+                    "scaleX": 2,
+                    "scaleY": 2,
+                    "originY": 1
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "baf7b90a-c4fc-4b9c-87de-66b5dd6b7e80",
+            "label": "enemyLayer",
+            "scope": "CLASS",
+            "components": [],
+            "x": 11.867828044274347,
+            "y": 544,
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "98623aca-b54a-4513-845c-737318a5a8f4",
+                    "label": "dust",
+                    "scope": "CLASS",
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "atlas-enemy",
+                        "frame": "dust1.png"
+                    },
+                    "x": 1596,
+                    "scaleX": 3,
+                    "scaleY": 3,
+                    "originY": 1
+                },
+                {
+                    "type": "Sprite",
+                    "id": "2c834d77-1faa-46c2-8a56-78ee4ecb08a8",
+                    "label": "bouncer",
+                    "scope": "CLASS",
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "atlas-enemy",
+                        "frame": "bouncer1.png"
+                    },
+                    "x": 1540,
+                    "scaleX": 3,
+                    "scaleY": 3,
+                    "originY": 1
+                },
+                {
+                    "type": "Sprite",
+                    "id": "a605cbd2-b13d-4181-a1dd-8209144270ab",
+                    "label": "barfly",
+                    "scope": "CLASS",
+                    "components": [
+                        "PushOnClick"
+                    ],
+                    "texture": {
+                        "key": "atlas-enemy",
+                        "frame": "barfly1.png"
+                    },
+                    "x": 1372,
+                    "scaleX": 3,
+                    "scaleY": 3,
+                    "originY": 1
+                }
+            ]
+        },
+        {
+            "type": "Layer",
+            "id": "c8345cc2-b939-4e9a-a081-0685386b2f50",
+            "label": "gameUI",
+            "scope": "CLASS",
+            "components": [],
+            "list": [
+                {
+                    "type": "Sprite",
+                    "id": "f9446ec8-08c8-4d44-ad8d-403480555eaa",
+                    "label": "cursor",
+                    "scope": "CLASS",
+                    "components": [],
+                    "texture": {
+                        "key": "Cursor"
+                    },
+                    "x": -48,
+                    "y": -48,
+                    "scaleX": 3,
+                    "scaleY": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "756d9ae7-07b9-4bca-b197-a5d22230c764",
+                    "label": "ui_Border",
+                    "components": [],
+                    "texture": {
+                        "key": "UI_Border"
+                    },
+                    "x": 640,
+                    "y": 360
+                },
+                {
+                    "type": "Image",
+                    "id": "253aa268-23af-4bd9-8583-02cd032d1d4f",
+                    "label": "ui_iconBox_ammo",
+                    "components": [],
+                    "texture": {
+                        "key": "UI_IconBox"
+                    },
+                    "x": 1176,
+                    "y": 648,
+                    "scaleX": 3,
+                    "scaleY": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "02d5a898-9ca2-4e5a-b47e-d367eeab5374",
+                    "label": "ui_iconBox_health",
+                    "components": [],
+                    "texture": {
+                        "key": "UI_IconBox"
+                    },
+                    "x": 104,
+                    "y": 648,
+                    "scaleX": 3,
+                    "scaleY": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "890a0061-165f-4774-8731-ee2723bf0405",
+                    "label": "ui_Ammo",
+                    "components": [],
+                    "texture": {
+                        "key": "UI_Ammo"
+                    },
+                    "x": 1176,
+                    "y": 648,
+                    "scaleX": 3,
+                    "scaleY": 3
+                },
+                {
+                    "type": "Image",
+                    "id": "bdf846b1-66bc-46ae-8f12-b81d951b0a82",
+                    "label": "ui_Health",
+                    "components": [],
+                    "texture": {
+                        "key": "UI_Health"
+                    },
+                    "x": 104,
+                    "y": 648,
+                    "scaleX": 3,
+                    "scaleY": 3
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "6c220b7d-aa99-4dfc-932e-ca51608b1bbf",
+                    "label": "healthCounter",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 184,
+                    "y": 648,
+                    "originX": 0,
+                    "text": "0/0",
+                    "font": "smallPixel7",
+                    "fontSize": 50,
+                    "dropShadowY": 10
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "c567843b-9b68-4da1-9d79-01e636065734",
+                    "label": "ammoCounter",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 1096,
+                    "y": 648,
+                    "originX": 1,
+                    "text": "0/0",
+                    "font": "smallPixel7",
+                    "align": 2,
+                    "fontSize": 50,
+                    "dropShadowY": 10
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "77a27ef1-3def-420f-8d9b-a2f3b38501d6",
+                    "label": "scoreText",
+                    "components": [],
+                    "x": 640,
+                    "y": 609,
+                    "text": "SCORE:",
+                    "font": "smallPixel7",
+                    "align": 1,
+                    "fontSize": 40,
+                    "dropShadowY": 10
+                },
+                {
+                    "type": "BitmapText",
+                    "id": "b632e3f8-f994-4302-aa0a-f9365e08bb18",
+                    "label": "scoreCounter",
+                    "scope": "CLASS",
+                    "components": [],
+                    "x": 640,
+                    "y": 670,
+                    "text": "0",
+                    "font": "smallPixel7",
+                    "align": 1,
+                    "fontSize": 75,
+                    "dropShadowY": 10
+                }
+            ]
+        },
+        {
+            "type": "BitmapText",
+            "id": "111dfe4f-91eb-489b-aeb0-6caa6881cce9",
+            "label": "reloadIndicator",
+            "scope": "CLASS",
+            "components": [],
+            "x": 640,
+            "y": 128,
+            "visible": false,
+            "text": "RELOAD!!!",
+            "font": "smallPixel7",
+            "fontSize": 80
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 2
+    }
+}
