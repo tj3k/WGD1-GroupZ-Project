@@ -1,6 +1,6 @@
 # WGD1 - Group Z Project
 # Bloody Outlaws
-![](Bloody%20Outlaws/assets/images/UI/GameLogo.png)
+![](assets/images/UI/GameLogo.png)
 
 Project for the Web Games Dev 1 Course
 
