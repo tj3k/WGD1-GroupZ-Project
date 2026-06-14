@@ -4,6 +4,8 @@
 
 Project for the Web Games Dev 1 Course
 
+**Now Easily Playable on <ins>[Itch.io](https://tj3k.itch.io/bloody-outlaws-prototype)</ins>!**
+
 ---
 
 A Western-Themed, Arcade Shooting-Gallery web game made with [Phaser](https://phaser.io/).
